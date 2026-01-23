@@ -38,15 +38,15 @@ export function Header() {
       {/* Main nav */}
       <nav>
         <Container>
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-24">
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <Image
                 src="/air_conditioning_champ_logo.png"
                 alt={COMPANY.name}
-                width={200}
-                height={60}
-                className="h-16 w-auto"
+                width={280}
+                height={84}
+                className="h-20 w-auto"
                 priority
               />
             </Link>
