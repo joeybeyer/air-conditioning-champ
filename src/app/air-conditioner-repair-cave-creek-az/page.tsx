@@ -160,6 +160,20 @@ export default function CaveCreekACRepairPage() {
               <Link href="/services/ac-repair" className="text-primary-600 hover:text-primary-700">AC repair services</Link>.
             </p>
           </div>
+
+          {/* Google Business Listing Map */}
+          <div className="mt-8 rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4915.191451865986!2d-111.94957099999999!3d33.8331057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b7fcbead6da35%3A0xe24fdad0b5bf6fb5!2sAir%20Conditioning%20Champ!5e1!3m2!1sen!2sus!4v1769201472240!5m2!1sen!2sus"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Air Conditioning Champ Cave Creek Location"
+            ></iframe>
+          </div>
         </Container>
       </section>
 
@@ -294,24 +308,8 @@ export default function CaveCreekACRepairPage() {
       <section className="py-8 md:py-12 bg-gray-50">
         <Container>
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-            Our Cave Creek Service Location
-          </h2>
-          <div className="mb-8 rounded-lg overflow-hidden shadow-lg">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4915.191451865986!2d-111.94957099999999!3d33.8331057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b7fcbead6da35%3A0xe24fdad0b5bf6fb5!2sAir%20Conditioning%20Champ!5e1!3m2!1sen!2sus!4v1769201472240!5m2!1sen!2sus"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Air Conditioning Champ Cave Creek Location"
-            />
-          </div>
-
-          <h3 className="text-xl font-bold text-gray-900 mb-4">
             Cave Creek Areas We Serve
-          </h3>
+          </h2>
           <p className="text-gray-600 mb-4">
             We provide AC repair service throughout Cave Creek and surrounding areas including:
           </p>
