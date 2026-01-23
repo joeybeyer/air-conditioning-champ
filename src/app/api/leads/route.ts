@@ -1,7 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy-initialize Resend to avoid build-time errors
+let resend: Resend | null = null;
+function getResend() {
+  if (!resend && process.env.RESEND_API_KEY) {
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resend;
+}
 
 // Disposable email domains to block
 const DISPOSABLE_DOMAINS = new Set([
@@ -241,8 +248,10 @@ export async function POST(request: NextRequest) {
 
     // If not spam, send email notification via Resend
     if (!spamCheck.isSpam) {
-      try {
-        await resend.emails.send({
+      const resendClient = getResend();
+      if (resendClient) {
+        try {
+          await resendClient.emails.send({
           from: process.env.RESEND_FROM_EMAIL || 'leads@airconditioningchamp.com',
           to: process.env.LEAD_NOTIFICATION_EMAIL || 'leads@airconditioningchamp.com',
           subject: `New Lead: ${body.serviceType} - ${body.city}, ${body.state}`,
@@ -284,10 +293,13 @@ export async function POST(request: NextRequest) {
             </p>
           `,
         });
-        console.log('Lead notification email sent');
-      } catch (emailError) {
-        console.error('Failed to send lead notification:', emailError);
-        // Don't fail the request if email fails - lead is still logged
+          console.log('Lead notification email sent');
+        } catch (emailError) {
+          console.error('Failed to send lead notification:', emailError);
+          // Don't fail the request if email fails - lead is still logged
+        }
+      } else {
+        console.log('Resend not configured - lead logged but email not sent');
       }
     } else {
       console.log(`Spam lead detected: ${spamCheck.reasons.join(', ')}`);
