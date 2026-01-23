@@ -1,4 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Disposable email domains to block
 const DISPOSABLE_DOMAINS = new Set([
@@ -236,14 +239,56 @@ export async function POST(request: NextRequest) {
       timestamp: new Date().toISOString(),
     });
 
-    // If not spam, send notification (implement your email service here)
+    // If not spam, send email notification via Resend
     if (!spamCheck.isSpam) {
-      // TODO: Implement email notification
-      // await sendLeadNotification({
-      //   to: 'leads@airconditioningchamp.com',
-      //   lead: body,
-      // });
-      console.log('Valid lead - would send notification');
+      try {
+        await resend.emails.send({
+          from: process.env.RESEND_FROM_EMAIL || 'leads@airconditioningchamp.com',
+          to: process.env.LEAD_NOTIFICATION_EMAIL || 'leads@airconditioningchamp.com',
+          subject: `New Lead: ${body.serviceType} - ${body.city}, ${body.state}`,
+          html: `
+            <h2>New Quote Request</h2>
+            <table style="border-collapse: collapse; width: 100%; max-width: 500px;">
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 8px; font-weight: bold;">Name:</td>
+                <td style="padding: 8px;">${body.name}</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 8px; font-weight: bold;">Phone:</td>
+                <td style="padding: 8px;"><a href="tel:${body.phone}">${body.phone}</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 8px; font-weight: bold;">Email:</td>
+                <td style="padding: 8px;"><a href="mailto:${body.email}">${body.email}</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 8px; font-weight: bold;">Location:</td>
+                <td style="padding: 8px;">${body.city}, ${body.state} ${body.zipCode}</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 8px; font-weight: bold;">Service:</td>
+                <td style="padding: 8px;">${body.serviceType}</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 8px; font-weight: bold;">Issue:</td>
+                <td style="padding: 8px;">${body.issueType}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px; font-weight: bold;">Source:</td>
+                <td style="padding: 8px;">${body.source || 'website'}</td>
+              </tr>
+            </table>
+            <p style="margin-top: 20px; color: #666; font-size: 12px;">
+              Lead ID: ${leadId}<br>
+              Received: ${new Date().toLocaleString('en-US', { timeZone: 'America/Phoenix' })}
+            </p>
+          `,
+        });
+        console.log('Lead notification email sent');
+      } catch (emailError) {
+        console.error('Failed to send lead notification:', emailError);
+        // Don't fail the request if email fails - lead is still logged
+      }
     } else {
       console.log(`Spam lead detected: ${spamCheck.reasons.join(', ')}`);
     }
