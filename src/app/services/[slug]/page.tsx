@@ -72,7 +72,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       />
 
       <Hero
-        title={`${service.name} in West Valley, AZ`}
+        title={`${service.name} Services`}
         subtitle={service.shortDescription}
         backgroundImage="/service_page_optimized.webp"
       />
@@ -110,7 +110,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
           {/* Pricing Table */}
           <PricingTable
             items={service.pricingTable}
-            title={`${service.name} Pricing in West Valley`}
+            title={`${service.name} Pricing`}
             note={service.pricing.note}
           />
 
@@ -164,19 +164,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
           {/* Service Areas */}
           <div className="my-12">
             <h2 className="text-xl font-bold text-gray-900 mb-4">
-              {service.name} Service Areas in West Valley
+              {service.name} Service Areas
             </h2>
             <p className="text-gray-600 mb-4">
-              We provide {service.name.toLowerCase()} services throughout the West Valley area. Our technicians serve homeowners in{' '}
-              {LOCATIONS.slice(0, 3).map((loc, i) => (
-                <span key={loc.slug}>
-                  <Link href={`/locations/${loc.slug}`} className="text-primary-600 hover:text-primary-700">
-                    {loc.city}
-                  </Link>
-                  {i < 2 ? ', ' : ''}
-                </span>
-              ))}{' '}
-              and all surrounding communities.
+              We provide {service.name.toLowerCase()} services across Arizona, California, Nevada, and Texas. Our technicians serve homeowners in communities throughout these states.
             </p>
             <div className="flex flex-wrap gap-2">
               {LOCATIONS.map((location) => (

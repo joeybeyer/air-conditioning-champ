@@ -56,7 +56,7 @@ export function generateServiceMetadata(
   metaDescription: string
 ): Metadata {
   return generatePageMetadata({
-    title: `${serviceName} in West Valley AZ`,
+    title: `${serviceName} Services`,
     description: metaDescription,
     path: `/services/${serviceSlug}`,
   });

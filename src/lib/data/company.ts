@@ -4,9 +4,9 @@
 export const COMPANY = {
   name: 'Air Conditioning Champ',
   legalName: 'Air Conditioning Champ LLC',
-  phone: '(623) 301-9085',
-  phoneRaw: '+16233019085',
-  trackingPhone: '(623) 301-9085',
+  phone: '(888) 284-1430',
+  phoneRaw: '+18882841430',
+  trackingPhone: '(888) 284-1430',
   email: 'info@airconditioningchamp.com',
   url: 'https://airconditioningchamp.com',
 
@@ -25,8 +25,8 @@ export const COMPANY = {
     longitude: -112.3686,
   },
 
-  serviceArea: 'West Valley Arizona',
-  serviceAreaDescription: 'Serving El Mirage, Surprise, Peoria, Glendale, Goodyear, Avondale, Buckeye, Litchfield Park, Sun City, and Sun City West',
+  serviceArea: 'Arizona, California, Nevada, Texas',
+  serviceAreaDescription: 'Serving Arizona, California, Nevada, and Texas communities',
 
   hours: {
     description: 'Open 24/7',
@@ -37,11 +37,11 @@ export const COMPANY = {
 
   founded: '2020',
 
-  description: 'Air Conditioning Champ provides expert AC repair, installation, and maintenance services throughout West Valley Arizona. Our licensed technicians offer 24/7 emergency service with fast response times and upfront pricing.',
+  description: 'Air Conditioning Champ provides expert AC repair, installation, and maintenance services throughout Arizona, California, Nevada, and Texas. Our licensed technicians offer 24/7 emergency service with fast response times and upfront pricing.',
 
-  shortDescription: 'Expert HVAC services in West Valley AZ. 24/7 emergency AC repair.',
+  shortDescription: 'Expert HVAC services. 24/7 emergency AC repair.',
 
-  slogan: 'Your West Valley AC Experts',
+  slogan: 'Your Local AC Experts',
   tagline: '24/7 Emergency Service • Licensed & Insured • Upfront Pricing',
 
   social: {

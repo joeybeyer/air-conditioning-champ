@@ -37,7 +37,7 @@ const ISSUE_TYPES = [
 const SUCCESS_TESTIMONIALS = [
   { name: 'Sarah M.', location: 'Surprise, AZ', text: 'They called back in 10 minutes and had someone out same day. AC was fixed within an hour!' },
   { name: 'Robert K.', location: 'Peoria, AZ', text: 'Fast response, fair price. They explained everything before starting work.' },
-  { name: 'Jennifer L.', location: 'Glendale, AZ', text: 'Best AC service in the West Valley. Professional and honest.' },
+  { name: 'Jennifer L.', location: 'Glendale, AZ', text: 'Best AC service around. Professional and honest.' },
   { name: 'Michael T.', location: 'Buckeye, AZ', text: 'Called at 2am for an emergency. No extra charges and they fixed it fast.' },
   { name: 'Margaret H.', location: 'Sun City, AZ', text: 'Honest assessment - fixed my AC without pushing a replacement.' },
 ];

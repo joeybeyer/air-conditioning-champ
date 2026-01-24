@@ -12,7 +12,7 @@ import { generateContactPageSchema } from '@/lib/schema/generators';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: `Contact ${COMPANY.name} for AC repair and HVAC services in West Valley Arizona. Call ${COMPANY.phone} for 24/7 emergency service or schedule online.`,
+  description: `Contact ${COMPANY.name} for AC repair and HVAC services. Call ${COMPANY.phone} for 24/7 emergency service or schedule online.`,
   alternates: {
     canonical: `${COMPANY.url}/contact`,
   },
@@ -139,19 +139,12 @@ export default function ContactPage() {
         <Container>
           <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Service Areas</h2>
           <p className="text-gray-600 text-center mb-8 max-w-2xl mx-auto">
-            We provide HVAC services throughout the West Valley. Click your city for local information.
+            We provide HVAC services across Arizona, California, Nevada, and Texas. Click your city for local information.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/locations/el-mirage-az" className="bg-white border border-gray-200 px-4 py-2 rounded-lg hover:border-primary-500 transition-colors">El Mirage</Link>
-            <Link href="/locations/surprise-az" className="bg-white border border-gray-200 px-4 py-2 rounded-lg hover:border-primary-500 transition-colors">Surprise</Link>
-            <Link href="/locations/peoria-az" className="bg-white border border-gray-200 px-4 py-2 rounded-lg hover:border-primary-500 transition-colors">Peoria</Link>
-            <Link href="/locations/glendale-az" className="bg-white border border-gray-200 px-4 py-2 rounded-lg hover:border-primary-500 transition-colors">Glendale</Link>
-            <Link href="/locations/goodyear-az" className="bg-white border border-gray-200 px-4 py-2 rounded-lg hover:border-primary-500 transition-colors">Goodyear</Link>
-            <Link href="/locations/avondale-az" className="bg-white border border-gray-200 px-4 py-2 rounded-lg hover:border-primary-500 transition-colors">Avondale</Link>
-            <Link href="/locations/buckeye-az" className="bg-white border border-gray-200 px-4 py-2 rounded-lg hover:border-primary-500 transition-colors">Buckeye</Link>
-            <Link href="/locations/litchfield-park-az" className="bg-white border border-gray-200 px-4 py-2 rounded-lg hover:border-primary-500 transition-colors">Litchfield Park</Link>
-            <Link href="/locations/sun-city-az" className="bg-white border border-gray-200 px-4 py-2 rounded-lg hover:border-primary-500 transition-colors">Sun City</Link>
-            <Link href="/locations/sun-city-west-az" className="bg-white border border-gray-200 px-4 py-2 rounded-lg hover:border-primary-500 transition-colors">Sun City West</Link>
+          <div className="text-center">
+            <Link href="/locations" className="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+              View All Service Areas
+            </Link>
           </div>
         </Container>
       </section>

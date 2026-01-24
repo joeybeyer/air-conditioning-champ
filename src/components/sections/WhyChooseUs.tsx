@@ -26,7 +26,7 @@ const features = [
   {
     icon: Users,
     title: `${COMPANY.stats.customersServed} Served`,
-    description: `We've helped thousands of West Valley families stay comfortable. Read our ${COMPANY.stats.fiveStarReviews} 5-star reviews.`,
+    description: `We've helped thousands of families stay comfortable. Read our ${COMPANY.stats.fiveStarReviews} 5-star reviews.`,
   },
   {
     icon: Wrench,

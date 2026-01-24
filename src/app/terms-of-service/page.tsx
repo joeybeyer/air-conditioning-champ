@@ -38,7 +38,7 @@ export default function TermsOfServicePage() {
             <h2>Services</h2>
             <p>
               {COMPANY.name} provides HVAC services including but not limited to air conditioning repair,
-              installation, maintenance, heating repair, and emergency services throughout West Valley, Arizona.
+              installation, maintenance, heating repair, and emergency services throughout Arizona, California, Nevada, and Texas.
             </p>
 
             <h2>Service Appointments</h2>
@@ -82,8 +82,8 @@ export default function TermsOfServicePage() {
 
             <h2>Service Area</h2>
             <p>
-              Our services are available throughout West Valley, Arizona, including El Mirage, Surprise,
-              Peoria, Glendale, Goodyear, Avondale, Buckeye, Litchfield Park, Sun City, and Sun City West.
+              Our services are available throughout Arizona, California, Nevada, and Texas. Visit our
+              locations page for a full list of service areas.
             </p>
 
             <h2>Emergency Services</h2>

@@ -16,7 +16,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "Best AC service in the West Valley! They installed our new system and it's running great. The financing made it affordable too.",
+    quote: "Best AC service around! They installed our new system and it's running great. The financing made it affordable too.",
     author: "Jennifer L.",
     location: "Glendale, AZ",
     rating: 5,

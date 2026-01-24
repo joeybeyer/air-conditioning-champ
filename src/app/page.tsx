@@ -16,8 +16,8 @@ import { LOCATIONS } from '@/lib/data/locations';
 import { generateHVACBusinessSchema, generateFAQSchema } from '@/lib/schema/generators';
 
 export const metadata: Metadata = {
-  title: `Expert AC Repair & HVAC Services in West Valley AZ | ${COMPANY.name}`,
-  description: `${COMPANY.name} provides 24/7 AC repair, installation, and maintenance in West Valley Arizona. Serving El Mirage, Surprise, Peoria, Glendale & more. Call ${COMPANY.phone} for fast service!`,
+  title: `Expert AC Repair & HVAC Services | ${COMPANY.name}`,
+  description: `${COMPANY.name} provides 24/7 AC repair, installation, and maintenance across Arizona, California, Nevada, and Texas. Licensed technicians, upfront pricing. Call ${COMPANY.phone} for fast service!`,
   alternates: {
     canonical: COMPANY.url,
   },
@@ -25,23 +25,23 @@ export const metadata: Metadata = {
 
 const homeFAQs = [
   {
-    question: 'How much does AC repair cost in West Valley, AZ?',
-    answer: 'AC repair in West Valley typically costs between $89-$500 depending on the issue. Our diagnostic fee is $89 and is waived if you proceed with the repair. We provide upfront pricing before any work begins.',
+    question: 'How much does AC repair cost?',
+    answer: 'AC repair typically costs between $89-$500 depending on the issue. Our diagnostic fee is $89 and is waived if you proceed with the repair. We provide upfront pricing before any work begins.',
   },
   {
-    question: 'Do you offer 24/7 emergency AC service in West Valley?',
-    answer: 'Yes, we provide 24/7 emergency AC repair throughout West Valley Arizona with no overtime charges. Our typical response time is 1-2 hours, even on nights, weekends, and holidays.',
+    question: 'Do you offer 24/7 emergency AC service?',
+    answer: 'Yes, we provide 24/7 emergency AC repair across all our service areas with no overtime charges. Our typical response time is 1-2 hours, even on nights, weekends, and holidays.',
   },
   {
-    question: 'What cities do you serve in the West Valley?',
-    answer: 'We serve all of West Valley Arizona including El Mirage, Surprise, Peoria, Glendale, Goodyear, Avondale, Buckeye, Litchfield Park, Sun City, and Sun City West.',
+    question: 'What areas do you serve?',
+    answer: 'We serve communities across Arizona, California, Nevada, and Texas. Our locations include the Phoenix metro area, San Diego County, Orange County, Las Vegas, and San Antonio.',
   },
   {
-    question: 'How often should I have my AC serviced in Arizona?',
-    answer: 'In Arizona\'s extreme climate, we recommend AC maintenance twice per year—once in spring before cooling season and once in fall. Regular maintenance prevents 80% of breakdowns and extends equipment life.',
+    question: 'How often should I have my AC serviced?',
+    answer: 'We recommend AC maintenance twice per year—once in spring before cooling season and once in fall. Regular maintenance prevents 80% of breakdowns and extends equipment life.',
   },
   {
-    question: 'Do you offer financing for AC installation in West Valley?',
+    question: 'Do you offer financing for AC installation?',
     answer: 'Yes, we offer flexible financing options with approved credit, including 0% interest plans. New AC systems range from $4,500-$12,000 depending on size and efficiency.',
   },
 ];
@@ -55,40 +55,40 @@ export default function HomePage() {
       <JsonLd data={[hvacBusinessSchema, faqSchema].filter(Boolean)} />
 
       <Hero
-        title="Expert AC Repair & HVAC Services in West Valley, AZ"
-        subtitle={`${COMPANY.name} provides fast, reliable air conditioning repair, installation, and maintenance throughout West Valley Arizona. Licensed technicians, upfront pricing, and 24/7 emergency service.`}
+        title="Your Local AC Experts"
+        subtitle={`${COMPANY.name} provides fast, reliable air conditioning repair, installation, and maintenance across Arizona, California, Nevada, and Texas. Licensed technicians, upfront pricing, and 24/7 emergency service.`}
       />
 
       <section className="py-12">
         <Container>
           <KeyTakeaways
             items={[
-              '24/7 emergency AC service with 1-2 hour response times throughout West Valley Arizona',
+              '24/7 emergency AC service with 1-2 hour response times across all service areas',
               'Licensed, bonded, and insured technicians with 90-day warranty on all repairs',
-              `Serving ${LOCATIONS.length} West Valley cities: El Mirage, Surprise, Peoria, Glendale, and more`,
+              `Serving ${LOCATIONS.length} locations across Arizona, California, Nevada, and Texas`,
             ]}
           />
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="prose max-w-none">
               <p className="text-lg">
-                When Arizona temperatures soar above 110°F, you need an{' '}
+                When temperatures soar and your AC breaks down, you need an{' '}
                 <Link href="/services/ac-repair" className="text-primary-600 hover:text-primary-700 font-medium">
                   AC repair service
                 </Link>{' '}
-                you can trust. <strong>{COMPANY.name}</strong> has been keeping West Valley families comfortable since {COMPANY.founded}.
+                you can trust. <strong>{COMPANY.name}</strong> has been keeping families comfortable since {COMPANY.founded}.
                 Our team of licensed HVAC technicians provides fast, affordable service throughout{' '}
-                <Link href="/locations/el-mirage-az" className="text-primary-600 hover:text-primary-700">El Mirage</Link>,{' '}
-                <Link href="/locations/surprise-az" className="text-primary-600 hover:text-primary-700">Surprise</Link>,{' '}
-                <Link href="/locations/peoria-az" className="text-primary-600 hover:text-primary-700">Peoria</Link>,{' '}
-                and all surrounding areas.
+                <Link href="/locations" className="text-primary-600 hover:text-primary-700">Arizona</Link>,{' '}
+                <Link href="/locations" className="text-primary-600 hover:text-primary-700">California</Link>,{' '}
+                <Link href="/locations" className="text-primary-600 hover:text-primary-700">Nevada</Link>, and{' '}
+                <Link href="/locations" className="text-primary-600 hover:text-primary-700">Texas</Link>.
               </p>
-              <h2 className="text-xl font-bold text-gray-900 mt-6 mb-3">Why West Valley Chooses Us</h2>
+              <h2 className="text-xl font-bold text-gray-900 mt-6 mb-3">Why Homeowners Choose Us</h2>
               <ul className="text-gray-600 space-y-2">
                 <li><strong>24/7 Emergency Service</strong> - No overtime charges, even on holidays</li>
                 <li><strong>Upfront Pricing</strong> - Know the cost before work begins</li>
                 <li><strong>Licensed &amp; Insured</strong> - {COMPANY.licenses.type} licensed for your protection</li>
-                <li><strong>Local Experts</strong> - We know West Valley climate and AC needs</li>
+                <li><strong>Local Experts</strong> - We know your climate and AC needs</li>
               </ul>
             </div>
             <div>
@@ -103,7 +103,7 @@ export default function HomePage() {
       <section className="py-12 bg-gray-50">
         <Container>
           <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-4">
-            Our HVAC Services in West Valley, AZ
+            Our HVAC Services
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
             From emergency repairs to new system installations, we handle all your heating and cooling needs with expertise and professionalism.
@@ -118,22 +118,74 @@ export default function HomePage() {
       <section className="py-12">
         <Container>
           <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-4">
-            West Valley Areas We Serve
+            Areas We Serve
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            We provide comprehensive HVAC services throughout the West Valley, with fast response times to all communities.
+            We provide comprehensive HVAC services across four states, with fast response times to all communities.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {LOCATIONS.map((location) => (
-              <Link
-                key={location.slug}
-                href={`/locations/${location.slug}`}
-                className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:border-primary-500 hover:shadow-md transition-all"
-              >
-                <span className="font-semibold text-gray-900">{location.city}</span>
-                <span className="block text-sm text-gray-500">{location.state}</span>
-              </Link>
-            ))}
+
+          {/* Arizona */}
+          <div className="mb-8">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Arizona</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {LOCATIONS.filter(loc => loc.state === 'AZ').map((location) => (
+                <Link
+                  key={location.slug}
+                  href={`/locations/${location.slug}`}
+                  className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:border-primary-500 hover:shadow-md transition-all"
+                >
+                  <span className="font-semibold text-gray-900">{location.city}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* California */}
+          <div className="mb-8">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">California</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {LOCATIONS.filter(loc => loc.state === 'CA').map((location) => (
+                <Link
+                  key={location.slug}
+                  href={`/locations/${location.slug}`}
+                  className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:border-primary-500 hover:shadow-md transition-all"
+                >
+                  <span className="font-semibold text-gray-900">{location.city}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Nevada */}
+          <div className="mb-8">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Nevada</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {LOCATIONS.filter(loc => loc.state === 'NV').map((location) => (
+                <Link
+                  key={location.slug}
+                  href={`/locations/${location.slug}`}
+                  className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:border-primary-500 hover:shadow-md transition-all"
+                >
+                  <span className="font-semibold text-gray-900">{location.city}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Texas */}
+          <div className="mb-8">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Texas</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {LOCATIONS.filter(loc => loc.state === 'TX').map((location) => (
+                <Link
+                  key={location.slug}
+                  href={`/locations/${location.slug}`}
+                  className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:border-primary-500 hover:shadow-md transition-all"
+                >
+                  <span className="font-semibold text-gray-900">{location.city}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
@@ -142,7 +194,7 @@ export default function HomePage() {
 
       <section className="py-12 bg-gray-50">
         <Container>
-          <FAQ items={homeFAQs} title="Frequently Asked Questions About HVAC Service in West Valley" />
+          <FAQ items={homeFAQs} title="Frequently Asked Questions About HVAC Service" />
         </Container>
       </section>
 

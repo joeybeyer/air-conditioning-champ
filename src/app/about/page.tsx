@@ -12,7 +12,7 @@ import { generateAboutPageSchema } from '@/lib/schema/generators';
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: `Learn about ${COMPANY.name}, your trusted HVAC contractor in West Valley Arizona. ${COMPANY.stats.yearsInBusiness}+ years experience, ${COMPANY.stats.fiveStarReviews} 5-star reviews, licensed and insured.`,
+  description: `Learn about ${COMPANY.name}, your trusted HVAC contractor serving Arizona, California, Nevada, and Texas. ${COMPANY.stats.yearsInBusiness}+ years experience, ${COMPANY.stats.fiveStarReviews} 5-star reviews, licensed and insured.`,
   alternates: {
     canonical: `${COMPANY.url}/about`,
   },
@@ -36,7 +36,7 @@ export default function AboutPage() {
 
       <Hero
         title={`About ${COMPANY.name}`}
-        subtitle="Your trusted HVAC experts in West Valley Arizona since 2020. Committed to quality, honesty, and keeping your family comfortable."
+        subtitle="Your trusted HVAC experts since 2020. Committed to quality, honesty, and keeping your family comfortable."
         showCTAs={false}
       />
 
@@ -58,8 +58,8 @@ export default function AboutPage() {
                 {COMPANY.name}
               </Link>{' '}
               was founded with a simple mission: provide honest, reliable HVAC service at fair prices.
-              Based in {COMPANY.address.city}, Arizona, we&apos;ve grown to become one of the most trusted
-              heating and cooling contractors in the West Valley.
+              Based in {COMPANY.address.city}, Arizona, we&apos;ve grown to serve communities across
+              Arizona, California, Nevada, and Texas.
             </p>
 
             <h2>Our Story</h2>
@@ -70,12 +70,9 @@ export default function AboutPage() {
               for our customers.
             </p>
             <p>
-              Today, we serve thousands of families throughout{' '}
-              <Link href="/locations/el-mirage-az">El Mirage</Link>,{' '}
-              <Link href="/locations/surprise-az">Surprise</Link>,{' '}
-              <Link href="/locations/peoria-az">Peoria</Link>,{' '}
-              <Link href="/locations/glendale-az">Glendale</Link>,
-              and all of West Valley Arizona. Our team of licensed technicians provides 24/7{' '}
+              Today, we serve thousands of families across{' '}
+              <Link href="/locations">our service areas</Link> in Arizona, California, Nevada, and Texas.
+              Our team of licensed technicians provides 24/7{' '}
               <Link href="/services/emergency-service">emergency service</Link>,{' '}
               <Link href="/services/ac-repair">AC repair</Link>,{' '}
               <Link href="/services/ac-installation">new system installations</Link>,
@@ -164,7 +161,7 @@ export default function AboutPage() {
 
       <CTASection
         title="Ready to Experience the Difference?"
-        description="Join the thousands of West Valley homeowners who trust Air Conditioning Champ for their HVAC needs."
+        description="Join the thousands of homeowners who trust Air Conditioning Champ for their HVAC needs."
       />
     </>
   );

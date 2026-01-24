@@ -17,11 +17,8 @@ export function Header() {
       {/* Top bar */}
       <div className="bg-primary-600 text-white py-2">
         <Container>
-          <div className="flex justify-between items-center text-sm">
-            <div className="hidden sm:flex items-center gap-4">
-              <span>{COMPANY.address.streetAddress}, {COMPANY.address.city}, {COMPANY.address.state} {COMPANY.address.postalCode}</span>
-            </div>
-            <div className="flex items-center gap-4 mx-auto sm:mx-0">
+          <div className="flex justify-center items-center text-sm">
+            <div className="flex items-center gap-4">
               <span className="hidden md:inline">{COMPANY.tagline}</span>
               <a
                 href={`tel:${COMPANY.phoneRaw}`}

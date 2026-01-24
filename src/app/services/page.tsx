@@ -9,8 +9,8 @@ import { COMPANY } from '@/lib/data/company';
 import { SERVICES } from '@/lib/data/services';
 
 export const metadata: Metadata = {
-  title: 'HVAC Services in West Valley AZ',
-  description: `${COMPANY.name} offers complete HVAC services in West Valley Arizona including AC repair, installation, maintenance, heating repair, and 24/7 emergency service. Call ${COMPANY.phone}!`,
+  title: 'HVAC Services',
+  description: `${COMPANY.name} offers complete HVAC services including AC repair, installation, maintenance, heating repair, and 24/7 emergency service. Call ${COMPANY.phone}!`,
   alternates: {
     canonical: `${COMPANY.url}/services`,
   },
@@ -22,7 +22,7 @@ export default function ServicesPage() {
       <Breadcrumbs items={[{ label: 'Services' }]} />
 
       <Hero
-        title="HVAC Services in West Valley, Arizona"
+        title="Our HVAC Services"
         subtitle="Complete heating and cooling solutions for your home. From emergency repairs to new installations, our licensed technicians handle it all."
         showCTAs={true}
       />
@@ -33,9 +33,9 @@ export default function ServicesPage() {
             <p className="text-lg">
               <strong>{COMPANY.name}</strong> provides comprehensive{' '}
               <Link href="/" className="text-primary-600 hover:text-primary-700 font-medium">
-                HVAC services throughout West Valley Arizona
-              </Link>
-              . Whether you need emergency{' '}
+                HVAC services
+              </Link>{' '}
+              across Arizona, California, Nevada, and Texas. Whether you need emergency{' '}
               <Link href="/services/ac-repair" className="text-primary-600 hover:text-primary-700">AC repair</Link>,
               a complete{' '}
               <Link href="/services/ac-installation" className="text-primary-600 hover:text-primary-700">system installation</Link>,

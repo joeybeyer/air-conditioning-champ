@@ -1,9 +1,16 @@
 // src/lib/data/locations.ts
-// West Valley Arizona location data for Air Conditioning Champ
+// Location data for Air Conditioning Champ (AZ, CA, NV, TX)
 
 export interface LocationFAQ {
   question: string;
   answer: string;
+}
+
+export interface LocationAddress {
+  street: string;
+  city: string;
+  state: string;
+  zip: string;
 }
 
 export interface Location {
@@ -24,6 +31,13 @@ export interface Location {
   metaTitle: string;
   metaDescription: string;
   keyTakeaways: string[];
+  // GBP-related fields
+  phone?: string;              // Location-specific phone (formatted)
+  phoneRaw?: string;           // Location-specific phone (raw for tel: links)
+  address?: LocationAddress;   // Physical address for GBP locations
+  googleMapsEmbed?: string;    // Google Maps embed URL
+  hasGBP: boolean;             // Whether this location has a Google Business Profile
+  parentGBP?: string;          // Slug of GBP location to use for phone (for non-GBP locations)
 }
 
 export const LOCATIONS: Location[] = [
@@ -51,6 +65,8 @@ export const LOCATIONS: Location[] = [
     metaTitle: 'El Mirage AC Repair & HVAC Service | Air Conditioning Champ',
     metaDescription: 'Expert AC repair and HVAC services in El Mirage, AZ. 24/7 emergency service, all brands, upfront pricing. Fast response throughout El Mirage. Call now!',
     keyTakeaways: ['Same-day AC service in El Mirage with 1-2 hour emergency response times', 'Serving all El Mirage neighborhoods including Dysart Ranch and Thompson Ranch', 'Licensed technicians experienced with desert climate HVAC challenges'],
+    hasGBP: false,
+    parentGBP: 'surprise-az',
   },
   {
     slug: 'surprise-az',
@@ -76,6 +92,16 @@ export const LOCATIONS: Location[] = [
     metaTitle: 'Surprise AZ AC Repair & HVAC Service | Air Conditioning Champ',
     metaDescription: 'Professional AC repair and HVAC services in Surprise, Arizona. 24/7 emergency service, free estimates, all neighborhoods served. Call for fast AC service!',
     keyTakeaways: ['Serving all Surprise neighborhoods including Marley Park, Sun Village, and Surprise Farms', '24/7 emergency AC service with fast response times throughout Surprise', 'Experienced with both family homes and 55+ community HVAC needs'],
+    hasGBP: true,
+    phone: '(623) 301-9085',
+    phoneRaw: '+16233019085',
+    address: {
+      street: '12801 W Bell Rd',
+      city: 'Surprise',
+      state: 'AZ',
+      zip: '85378',
+    },
+    googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4922.1036633803305!2d-112.3365012!3d33.6371743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b4574338533c7%3A0x71bf2d0ecd377a5a!2sAir%20Conditioning%20Champ!5e1!3m2!1sen!2sus!4v1769277847932!5m2!1sen!2sus',
   },
   {
     slug: 'peoria-az',
@@ -101,6 +127,8 @@ export const LOCATIONS: Location[] = [
     metaTitle: 'Peoria AZ AC Repair & Installation | Air Conditioning Champ',
     metaDescription: 'Expert AC repair and installation in Peoria, Arizona. Serving Vistancia, Old Town, and all Peoria neighborhoods. 24/7 emergency service. Call now!',
     keyTakeaways: ['Full-service HVAC coverage across all Peoria neighborhoods from Old Town to Vistancia', '24/7 emergency AC repair with rapid response throughout Peoria', 'Experienced with both older Peoria homes and new construction HVAC systems'],
+    hasGBP: false,
+    parentGBP: 'surprise-az',
   },
   {
     slug: 'glendale-az',
@@ -126,6 +154,8 @@ export const LOCATIONS: Location[] = [
     metaTitle: 'Glendale AZ AC Repair & HVAC Service | Air Conditioning Champ',
     metaDescription: 'Professional AC repair and HVAC services in Glendale, Arizona. From Arrowhead to Historic Downtown. 24/7 emergency service. Call for AC repair!',
     keyTakeaways: ['Comprehensive HVAC service across all Glendale from historic downtown to Arrowhead Ranch', '24/7 emergency service with fast response in Arizona\'s 5th largest city', 'Experienced with diverse housing stock from 1950s homes to modern luxury properties'],
+    hasGBP: false,
+    parentGBP: 'surprise-az',
   },
   {
     slug: 'goodyear-az',
@@ -151,6 +181,8 @@ export const LOCATIONS: Location[] = [
     metaTitle: 'Goodyear AZ AC Repair & Service | Air Conditioning Champ',
     metaDescription: 'Expert AC repair and HVAC service in Goodyear, Arizona. Serving Estrella Mountain Ranch, Palm Valley & all communities. 24/7 emergency service. Call now!',
     keyTakeaways: ['Serving all Goodyear communities including Estrella Mountain Ranch and Pebble Creek', 'Experienced with newer construction HVAC systems and builder warranty service', '24/7 emergency response in one of Arizona\'s fastest-growing cities'],
+    hasGBP: false,
+    parentGBP: 'surprise-az',
   },
   {
     slug: 'avondale-az',
@@ -176,6 +208,8 @@ export const LOCATIONS: Location[] = [
     metaTitle: 'Avondale AZ AC Repair & Service | Air Conditioning Champ',
     metaDescription: 'Reliable AC repair and HVAC services in Avondale, Arizona. Serving Garden Lakes, Coldwater Springs & all areas. Affordable pricing, 24/7 service. Call now!',
     keyTakeaways: ['Affordable AC repair and service throughout all Avondale neighborhoods', 'Fast response times with technicians stationed in the West Valley', 'Experienced with builder-grade and upgraded HVAC systems common in Avondale'],
+    hasGBP: false,
+    parentGBP: 'surprise-az',
   },
   {
     slug: 'buckeye-az',
@@ -201,6 +235,8 @@ export const LOCATIONS: Location[] = [
     metaTitle: 'Buckeye AZ AC Repair & Installation | Air Conditioning Champ',
     metaDescription: 'Professional AC repair and installation in Buckeye, Arizona. Serving Verrado, Tartesso, Sundance & all areas. Growing with Buckeye! Call for service.',
     keyTakeaways: ['Full HVAC service coverage in Arizona\'s fastest-growing city', 'Experienced with new construction systems in Verrado, Tartesso, and Sundance', 'Reliable emergency response throughout all Buckeye communities'],
+    hasGBP: false,
+    parentGBP: 'surprise-az',
   },
   {
     slug: 'litchfield-park-az',
@@ -226,6 +262,8 @@ export const LOCATIONS: Location[] = [
     metaTitle: 'Litchfield Park AZ AC Service | Air Conditioning Champ',
     metaDescription: 'Premium AC repair and HVAC service in Litchfield Park, Arizona. Experienced with high-end systems and historic homes. Professional service. Call now!',
     keyTakeaways: ['Premium HVAC service for Litchfield Park\'s discerning homeowners', 'Experienced with high-end systems, zoning, and smart home integration', 'Respectful, professional service appropriate for this exclusive community'],
+    hasGBP: false,
+    parentGBP: 'surprise-az',
   },
   {
     slug: 'sun-city-az',
@@ -251,6 +289,8 @@ export const LOCATIONS: Location[] = [
     metaTitle: 'Sun City AZ AC Repair & Service | Air Conditioning Champ',
     metaDescription: 'Trusted AC repair and HVAC service in Sun City, Arizona. Senior-friendly service, experience with older systems, HOA compliant solutions. Call today!',
     keyTakeaways: ['Senior-friendly service with patient, clear communication', 'Experienced with older HVAC systems common in Sun City homes', 'Familiar with Sun City HOA requirements for exterior equipment'],
+    hasGBP: false,
+    parentGBP: 'surprise-az',
   },
   {
     slug: 'sun-city-west-az',
@@ -276,6 +316,8 @@ export const LOCATIONS: Location[] = [
     metaTitle: 'Sun City West AZ AC Repair & Service | Air Conditioning Champ',
     metaDescription: 'Professional AC repair and HVAC service in Sun City West, Arizona. Senior-friendly, experienced with 80s-90s era systems. Serving all SCW areas. Call now!',
     keyTakeaways: ['Experienced with 1980s-2000s era HVAC systems common in Sun City West', 'Senior-friendly service with clear communication and fair pricing', 'Maintenance plans available including options for seasonal residents'],
+    hasGBP: false,
+    parentGBP: 'surprise-az',
   },
   {
     slug: 'cave-creek-az',
@@ -301,6 +343,301 @@ export const LOCATIONS: Location[] = [
     metaTitle: 'Cave Creek AZ AC Repair & Service | Air Conditioning Champ',
     metaDescription: 'Professional AC repair and HVAC services in Cave Creek, Arizona. Experienced with custom homes and desert properties. 24/7 emergency service. Call now!',
     keyTakeaways: ['Full HVAC service coverage throughout Cave Creek and surrounding desert communities', 'Experienced with custom homes and unique desert property configurations', '24/7 emergency AC repair with responsive service to Cave Creek'],
+    hasGBP: true,
+    phone: '(480) 866-9234',
+    phoneRaw: '+14808669234',
+    address: {
+      street: '6070 E Cave Creek Rd',
+      city: 'Cave Creek',
+      state: 'AZ',
+      zip: '85331',
+    },
+    googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.1940606084963!2d-111.94957099999999!3d33.8331057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b7fcbead6da35%3A0xe24fdad0b5bf6fb5!2sAir%20Conditioning%20Champ!5e0!3m2!1sen!2sus!4v1769277824994!5m2!1sen!2sus',
+  },
+  // === TEXAS ===
+  {
+    slug: 'san-antonio-tx',
+    city: 'San Antonio',
+    state: 'TX',
+    stateFullName: 'Texas',
+    zipCodes: ['78201', '78202', '78203', '78204', '78205', '78207', '78208', '78209', '78210', '78211', '78212', '78213', '78214', '78215', '78216', '78217', '78218', '78219', '78220', '78221', '78222', '78223', '78224', '78225', '78226', '78227', '78228', '78229', '78230', '78231', '78232', '78233', '78234', '78235', '78236', '78237', '78238', '78239', '78240', '78241', '78242', '78243', '78244', '78245', '78246', '78247', '78248', '78249', '78250', '78251', '78252', '78253', '78254', '78255', '78256', '78257', '78258', '78259', '78260', '78261', '78263', '78264', '78266'],
+    population: 1500000,
+    neighborhoods: ['Alamo Heights', 'Stone Oak', 'The Dominion', 'Helotes', 'Leon Valley', 'Castle Hills', 'Shavano Park', 'Hollywood Park', 'Terrell Hills', 'Olmos Park', 'Monte Vista', 'Southtown', 'King William', 'Pearl District'],
+    landmarks: ['The Alamo', 'River Walk', 'San Antonio Missions', 'Pearl District', 'Tower of the Americas', 'SeaWorld San Antonio', 'Six Flags Fiesta Texas', 'AT&T Center'],
+    majorRoads: ['I-10', 'I-35', 'I-410 Loop', 'US-281', 'US-90', 'Loop 1604', 'Highway 151'],
+    nearbyLocations: [],
+    climateNotes: `San Antonio has a humid subtropical climate with hot, humid summers that challenge AC systems. Summer temperatures frequently exceed 100°F with high humidity levels, especially in July (27+ muggy days). This combination of heat and humidity causes refrigerant leaks, frozen coils, overworked compressors, and clogged condensate drain lines. The moisture from monsoon season affects condenser coils and promotes mold growth in ductwork.`,
+    localInfo: `San Antonio is Texas's second-largest city, known for the historic Alamo, the famous River Walk, and a rich blend of Texan and Mexican-American culture. The city features diverse housing from historic neighborhoods like King William and Monte Vista to modern developments in Stone Oak and The Dominion. San Antonio's military presence (multiple bases) and growing tech sector drive continued residential development.`,
+    serviceNotes: `San Antonio's size and diverse housing stock require technicians experienced with everything from historic home retrofits to modern high-efficiency systems. We serve all San Antonio neighborhoods including the affluent north side communities, established inner-city areas, and growing suburban developments. Our SE Loop 410 location provides fast response throughout Bexar County.`,
+    faqs: [
+      { question: 'How much does AC repair cost in San Antonio?', answer: 'AC repair in San Antonio typically costs $150-$500 for minor repairs, $500-$1,500 for refrigerant leak repairs, and $1,500-$3,500 for compressor replacement. Diagnostic fees range from $75-$150 and are usually applied to the repair cost.' },
+      { question: 'Why does San Antonio humidity affect my AC system?', answer: 'San Antonio\'s high humidity makes your AC work harder to remove moisture from the air. This leads to longer run times, higher energy bills, frozen coils, and mold growth in ductwork. Regular maintenance including coil cleaning and drain line clearing is essential.' },
+      { question: 'How quickly can you respond to AC emergencies in San Antonio?', answer: 'We typically respond to AC emergencies in San Antonio within 1-2 hours. During heat waves when temperatures exceed 100°F, we prioritize emergency calls and have additional technicians available.' },
+      { question: 'What causes AC to freeze up in San Antonio summers?', answer: 'AC freeze-ups in San Antonio are commonly caused by low refrigerant, dirty air filters, blocked airflow, or dirty evaporator coils. The high humidity can worsen these issues. Call us immediately if you notice ice forming on your AC unit.' },
+      { question: 'Do you offer 24/7 emergency AC repair in San Antonio?', answer: 'Yes, we provide 24/7 emergency AC repair throughout San Antonio and surrounding areas. When it\'s 100°F outside, a broken AC is a health emergency, especially for elderly residents and those with medical conditions.' },
+      { question: 'How often should I service my AC in San Antonio\'s climate?', answer: 'In San Antonio\'s demanding climate, we recommend AC maintenance twice yearly—once in spring before summer heat and once in fall. This prevents breakdowns during peak usage and ensures your system handles the humidity efficiently.' },
+    ],
+    metaTitle: 'San Antonio AC Repair & HVAC Service | 24/7 Emergency | Air Conditioning Champ',
+    metaDescription: 'Expert AC repair in San Antonio, TX. 24/7 emergency service, upfront pricing, all brands serviced. Beat the San Antonio heat and humidity. Call (210) 964-1940!',
+    keyTakeaways: [
+      'Same-day AC repair throughout San Antonio with 1-2 hour emergency response',
+      'Experienced with San Antonio\'s humid subtropical climate and its effects on AC systems',
+      'Serving all neighborhoods from Stone Oak to Southtown with upfront pricing',
+      'Licensed technicians available 24/7 for emergency service',
+    ],
+    hasGBP: true,
+    phone: '(210) 964-1940',
+    phoneRaw: '+12109641940',
+    address: {
+      street: '3103 SE Loop 410 Acc Rd',
+      city: 'San Antonio',
+      state: 'TX',
+      zip: '78222',
+    },
+  },
+  // === NEVADA ===
+  {
+    slug: 'north-las-vegas-nv',
+    city: 'North Las Vegas',
+    state: 'NV',
+    stateFullName: 'Nevada',
+    zipCodes: ['89030', '89031', '89032', '89033', '89081', '89084', '89085', '89086', '89087'],
+    population: 262000,
+    neighborhoods: ['Aliante', 'Eldorado', 'North Valley', 'Centennial Hills', 'Lone Mountain', 'Tule Springs', 'Craig Ranch', 'Tropical Parkway', 'Ann Road Corridor', 'Losee Road Area'],
+    landmarks: ['Aliante Casino', 'Craig Ranch Regional Park', 'Floyd Lamb Park', 'Las Vegas Motor Speedway', 'Nellis Air Force Base', 'Tule Springs Fossil Beds'],
+    majorRoads: ['I-15', 'US-93', 'Las Vegas Boulevard', 'Craig Road', 'Ann Road', 'Centennial Parkway', 'Aliante Parkway', 'Losee Road'],
+    nearbyLocations: [],
+    climateNotes: `North Las Vegas experiences extreme Mojave Desert heat with summer temperatures regularly exceeding 115°F. The desert climate means AC systems run extensively from April through October. Desert dust constantly clogs filters and condenser coils, reducing efficiency and causing premature wear. Unlike humid climates, the dry air creates different challenges—systems work harder but don't deal with moisture issues. AC units in Las Vegas typically last 10-15 years compared to 15-20 years in milder climates due to the extreme heat stress.`,
+    localInfo: `North Las Vegas is one of the fastest-growing cities in Nevada, featuring master-planned communities like Aliante alongside established neighborhoods. The city is home to Nellis Air Force Base and the Las Vegas Motor Speedway. Many homes are newer construction built since the 2000s housing boom, though some established areas have older systems requiring more maintenance.`,
+    serviceNotes: `North Las Vegas's desert environment demands HVAC technicians who understand extreme heat operation. We service the full range of homes from newer Aliante developments to established North Valley neighborhoods. Our Las Vegas Boulevard location enables rapid response throughout North Las Vegas and the entire Las Vegas Valley.`,
+    faqs: [
+      { question: 'How long do AC units last in the Las Vegas desert heat?', answer: 'AC units in the Las Vegas Valley typically last 10-15 years, shorter than the national average of 15-20 years. The extreme heat (115°F+) causes compressors, capacitors, and other components to wear faster. Regular maintenance can extend system life.' },
+      { question: 'How often should I change my AC filter in North Las Vegas?', answer: 'In North Las Vegas, we recommend changing AC filters monthly during summer and every 2-3 months in cooler seasons. Desert dust accumulates quickly and clogs filters, reducing airflow and efficiency. Consider upgrading to MERV 11+ filters for better dust capture.' },
+      { question: 'Why does desert dust affect my AC performance?', answer: 'Desert dust in North Las Vegas clogs air filters, coats condenser coils, and infiltrates ductwork. This reduces airflow, forces your system to work harder, and increases energy bills. We recommend bi-annual coil cleaning and regular filter changes.' },
+      { question: 'How much does AC replacement cost in North Las Vegas?', answer: 'AC replacement in North Las Vegas typically costs $4,500-$12,000 depending on system size, efficiency rating (SEER), and installation complexity. We offer free estimates and financing options to help with this investment.' },
+      { question: 'Do you offer emergency AC repair in North Las Vegas?', answer: 'Yes, we provide 24/7 emergency AC repair in North Las Vegas. When temperatures exceed 110°F, a broken AC is dangerous, especially for seniors and children. Our emergency team responds quickly throughout the Las Vegas Valley.' },
+      { question: 'What temperature should I set my AC to in Las Vegas summer?', answer: 'We recommend setting your thermostat to 74-78°F when home during Las Vegas summers. Each degree lower increases energy use by 3-5%. Using a programmable thermostat to raise temperature when away can significantly reduce bills.' },
+    ],
+    metaTitle: 'North Las Vegas AC Repair & HVAC Service | 24/7 Desert Climate Experts | Air Conditioning Champ',
+    metaDescription: 'Expert AC repair in North Las Vegas, NV. Desert climate specialists, 24/7 emergency service, all brands. Beat the 115°F heat. Call (702) 725-4220!',
+    keyTakeaways: [
+      '24/7 emergency AC repair throughout North Las Vegas and the Las Vegas Valley',
+      'Desert climate specialists experienced with extreme heat (115°F+) AC challenges',
+      'Serving Aliante, Centennial Hills, and all North Las Vegas communities',
+      'Expert dust mitigation and maintenance for longer system life',
+    ],
+    hasGBP: true,
+    phone: '(702) 725-4220',
+    phoneRaw: '+17027254220',
+    address: {
+      street: '2409 Las Vegas Blvd N',
+      city: 'North Las Vegas',
+      state: 'NV',
+      zip: '89030',
+    },
+  },
+  // === CALIFORNIA - SAN DIEGO COUNTY ===
+  {
+    slug: 'santee-ca',
+    city: 'Santee',
+    state: 'CA',
+    stateFullName: 'California',
+    zipCodes: ['92071', '92072'],
+    population: 60000,
+    neighborhoods: ['Santee Lakes', 'Carlton Hills', 'Carlton Oaks', 'West Hills', 'Town Center', 'Fanita Ranch', 'Prospect Avenue', 'Magnolia', 'Eucalyptus Hills', 'Shadow Hill'],
+    landmarks: ['Santee Lakes Recreation Preserve', 'Mission Trails Regional Park', 'Santee Trolley Square', 'Carlton Oaks Golf Course', 'Big Rock Park', 'West Hills Park'],
+    majorRoads: ['CA-52', 'CA-67', 'Mission Gorge Road', 'Mast Boulevard', 'Magnolia Avenue', 'Cuyamaca Street', 'Prospect Avenue'],
+    nearbyLocations: ['el-cajon-ca', 'poway-ca'],
+    climateNotes: `Santee is an inland San Diego community experiencing hotter summers than coastal areas—typically 80-90°F compared to 65-75°F at the coast. Daily temperature swings of 30+ degrees are common, stressing HVAC systems. The area sees less humidity than the coast but still enough to occasionally affect AC performance. Santee's inland location means heavier AC reliance May through October.`,
+    localInfo: `Santee is an East County San Diego city known for its lakes, family-friendly atmosphere, and relatively affordable housing compared to coastal communities. The city has a mix of established 1970s-80s homes and newer developments. Many residents work in San Diego but enjoy Santee's suburban character and recreational amenities like Santee Lakes.`,
+    serviceNotes: `Santee's inland East County location means hotter temperatures and higher AC demands than coastal San Diego. We service all Santee neighborhoods from established Carlton Hills to newer developments. Our presence in San Diego County enables same-day service throughout Santee and surrounding East County communities.`,
+    faqs: [
+      { question: 'How much does AC repair cost in Santee?', answer: 'AC repair in Santee typically costs $89-$500 for common repairs. Our diagnostic fee is $89 and is applied toward the repair cost. Major repairs like compressor replacement range from $1,500-$3,500.' },
+      { question: 'Why is Santee hotter than coastal San Diego?', answer: 'Santee is approximately 15-20 miles inland, beyond the marine layer\'s cooling influence. Without ocean breezes, inland areas like Santee regularly reach 85-95°F in summer while the coast stays 65-75°F. This means your AC works significantly harder.' },
+      { question: 'Do you offer same-day AC repair in Santee?', answer: 'Yes, we offer same-day AC repair in Santee for most calls received before noon. For emergency situations, we respond within 1-2 hours throughout East County San Diego.' },
+      { question: 'How often should I service my AC in Santee\'s climate?', answer: 'We recommend annual AC maintenance in Santee, ideally in spring before summer heat arrives. Santee\'s hotter inland climate means your system works harder than coastal units, making regular maintenance especially important.' },
+      { question: 'What AC brands do you service in Santee?', answer: 'We service all major AC brands in Santee including Carrier, Trane, Lennox, Rheem, Goodman, York, Daikin, and more. Our technicians are trained on both older and newer systems.' },
+      { question: 'Do you provide emergency AC repair in Santee?', answer: 'Yes, we provide 24/7 emergency AC repair in Santee. When temperatures climb into the 90s, we understand that AC failure is urgent and prioritize emergency calls.' },
+    ],
+    metaTitle: 'Santee CA AC Repair & HVAC Service | Same-Day Service | Air Conditioning Champ',
+    metaDescription: 'Expert AC repair in Santee, CA. Same-day service, upfront pricing, all brands. Inland San Diego heat specialists. Call (619) 649-7174!',
+    keyTakeaways: [
+      'Same-day AC repair throughout Santee and East County San Diego',
+      'Experienced with inland San Diego\'s hotter climate conditions',
+      'Serving Carlton Hills, Santee Lakes, and all Santee neighborhoods',
+      '24/7 emergency service with fast response times',
+    ],
+    hasGBP: true,
+    phone: '(619) 649-7174',
+    phoneRaw: '+16196497174',
+    address: {
+      street: '11493 Woodside Ave',
+      city: 'Santee',
+      state: 'CA',
+      zip: '92071',
+    },
+  },
+  {
+    slug: 'carlsbad-ca',
+    city: 'Carlsbad',
+    state: 'CA',
+    stateFullName: 'California',
+    zipCodes: ['92008', '92009', '92010', '92011'],
+    population: 115000,
+    neighborhoods: ['Carlsbad Village', 'La Costa', 'Aviara', 'Bressi Ranch', 'Calavera Hills', 'Rancho Carrillo', 'Carlsbad Ranch', 'The Foothills', 'Olde Carlsbad', 'Terramar'],
+    landmarks: ['LEGOLAND California', 'Carlsbad Flower Fields', 'Carlsbad State Beach', 'The Crossings Golf Course', 'Carlsbad Premium Outlets', 'Agua Hedionda Lagoon', 'Leo Carrillo Ranch'],
+    majorRoads: ['I-5', 'CA-78', 'El Camino Real', 'Palomar Airport Road', 'Carlsbad Boulevard', 'La Costa Avenue', 'Cannon Road'],
+    nearbyLocations: ['poway-ca', 'santee-ca'],
+    climateNotes: `Carlsbad enjoys a mild coastal climate with summer temperatures typically 65-80°F—significantly cooler than inland San Diego. The marine layer and ocean breezes moderate temperatures year-round. However, higher coastal humidity affects AC performance differently than inland areas, potentially causing moisture issues, mold, and increased coil condensation. Salt air from the Pacific can also corrode outdoor AC components over time.`,
+    localInfo: `Carlsbad is an affluent North County San Diego coastal city known for LEGOLAND, the famous Flower Fields, and upscale beach communities. The city features diverse housing from historic Carlsbad Village cottages to luxury La Costa and Aviara estates. Many homes are higher-end with sophisticated HVAC systems including zoning and smart controls.`,
+    serviceNotes: `Carlsbad's coastal location means different AC challenges than inland—less cooling demand but more humidity and salt air concerns. We're experienced with high-end systems common in La Costa and Aviara, as well as older systems in established neighborhoods. Our San Diego County coverage enables reliable service throughout Carlsbad.`,
+    faqs: [
+      { question: 'How much does AC repair cost in Carlsbad?', answer: 'AC repair in Carlsbad typically costs $89-$500 for common issues. Higher-end systems common in Carlsbad may cost more for specialty parts. We provide upfront quotes before starting any work.' },
+      { question: 'Do coastal Carlsbad homes need AC?', answer: 'While Carlsbad\'s coastal climate is mild, many homes still benefit from AC during heat waves and Santa Ana wind events when temperatures can spike 20-30 degrees. AC also helps with humidity control and indoor air quality.' },
+      { question: 'How does salt air affect my Carlsbad AC unit?', answer: 'Salt air in coastal Carlsbad can corrode outdoor AC components, particularly condenser coils and electrical connections. We recommend annual inspections to check for corrosion and more frequent coil cleaning for coastal homes.' },
+      { question: 'Do you service high-end AC systems in Carlsbad?', answer: 'Yes, we\'re experienced with premium HVAC systems common in Carlsbad\'s La Costa and Aviara communities, including zoned systems, variable-speed equipment, and smart home integrations.' },
+      { question: 'How often should Carlsbad homeowners service their AC?', answer: 'Even in Carlsbad\'s mild climate, we recommend annual AC maintenance. Coastal humidity and salt air create unique maintenance needs, and regular service prevents small issues from becoming costly repairs.' },
+      { question: 'Do you offer emergency AC repair in Carlsbad?', answer: 'Yes, we provide 24/7 emergency AC repair in Carlsbad. While the coastal climate is mild, heat waves and Santa Ana events can create sudden AC emergencies when temperatures spike.' },
+    ],
+    metaTitle: 'Carlsbad CA AC Repair & HVAC Service | Coastal Climate Experts | Air Conditioning Champ',
+    metaDescription: 'Expert AC repair in Carlsbad, CA. Coastal climate specialists, high-end system experience, all neighborhoods. Call (619) 649-7175!',
+    keyTakeaways: [
+      'Coastal climate specialists understanding Carlsbad\'s unique AC needs',
+      'Experienced with high-end systems in La Costa and Aviara',
+      'Serving all Carlsbad from the Village to Bressi Ranch',
+      'Salt air corrosion prevention and coastal maintenance expertise',
+    ],
+    hasGBP: true,
+    phone: '(619) 649-7175',
+    phoneRaw: '+16196497175',
+    address: {
+      street: '7147 University Ave',
+      city: 'La Mesa',
+      state: 'CA',
+      zip: '91942',
+    },
+  },
+  {
+    slug: 'el-cajon-ca',
+    city: 'El Cajon',
+    state: 'CA',
+    stateFullName: 'California',
+    zipCodes: ['92019', '92020', '92021', '92022'],
+    population: 106000,
+    neighborhoods: ['Fletcher Hills', 'Granite Hills', 'Bostonia', 'Greenfield', 'Winter Gardens', 'Hillsdale', 'Crest', 'Harbison Canyon', 'Rancho San Diego', 'Singing Hills'],
+    landmarks: ['Sycuan Casino', 'Parkway Plaza Mall', 'Gillespie Field', 'Knox House Museum', 'Water Conservation Garden', 'Summers Past Farms', 'Viejas Casino'],
+    majorRoads: ['I-8', 'CA-67', 'CA-54', 'Main Street', 'Magnolia Avenue', 'Broadway', 'Fletcher Parkway', 'Jamacha Road'],
+    nearbyLocations: ['santee-ca', 'poway-ca'],
+    climateNotes: `El Cajon, nicknamed "The Box" for its valley location, traps heat and experiences significantly hotter temperatures than coastal San Diego—regularly exceeding 90-100°F in summer. The valley's geography limits air circulation, intensifying heat. This means El Cajon AC systems work extremely hard during summer months, requiring robust maintenance and often earlier replacement than coastal units.`,
+    localInfo: `El Cajon is an East County San Diego city known for its cultural diversity, historic downtown, and location in the Cajon Valley. The city offers more affordable housing than coastal communities, attracting families and first-time homebuyers. Housing ranges from older established neighborhoods to newer Rancho San Diego developments.`,
+    serviceNotes: `El Cajon's "Box" geography creates some of San Diego County's hottest temperatures, making reliable AC essential. We serve all El Cajon neighborhoods understanding that AC failure here is particularly urgent. Our East County presence enables fast response throughout El Cajon and surrounding communities.`,
+    faqs: [
+      { question: 'Why is El Cajon so much hotter than San Diego?', answer: 'El Cajon sits in a valley—"The Box"—that traps heat. Without coastal breezes, temperatures regularly reach 95-100°F while coastal San Diego stays in the 70s. This geographic reality means your AC works significantly harder than coastal units.' },
+      { question: 'How much does AC repair cost in El Cajon?', answer: 'AC repair in El Cajon typically costs $89-$500 for common repairs. Given El Cajon\'s extreme heat, we recommend addressing issues quickly to prevent bigger problems during heat waves.' },
+      { question: 'Do you offer emergency AC repair in El Cajon?', answer: 'Yes, we provide 24/7 emergency AC repair in El Cajon. When "The Box" heats up to 100°F, AC failure is a serious emergency. Our technicians prioritize El Cajon emergency calls.' },
+      { question: 'How often should El Cajon residents service their AC?', answer: 'El Cajon\'s extreme heat demands twice-yearly AC maintenance—spring and fall. Your system works harder than coastal units, making regular maintenance crucial for reliability and longevity.' },
+      { question: 'What SEER rating should El Cajon homes have?', answer: 'For El Cajon\'s hot climate, we recommend 16+ SEER systems. Higher efficiency systems cost more upfront but save significantly on energy bills when your AC runs extensively during hot El Cajon summers.' },
+      { question: 'Do you serve the Fletcher Hills area of El Cajon?', answer: 'Yes, we serve all El Cajon neighborhoods including Fletcher Hills, Granite Hills, Bostonia, Greenfield, and the surrounding unincorporated areas like Crest and Harbison Canyon.' },
+    ],
+    metaTitle: 'El Cajon CA AC Repair & HVAC Service | East County Heat Experts | Air Conditioning Champ',
+    metaDescription: 'Expert AC repair in El Cajon, CA. East County heat specialists for "The Box." 24/7 emergency service, all brands. Call (619) 649-7221!',
+    keyTakeaways: [
+      '24/7 emergency AC repair for El Cajon\'s extreme valley heat',
+      'Understanding "The Box"—El Cajon\'s unique hot microclimate',
+      'Serving Fletcher Hills, Granite Hills, and all El Cajon neighborhoods',
+      'Experienced with high-demand AC systems in East County\'s hottest city',
+    ],
+    hasGBP: true,
+    phone: '(619) 649-7221',
+    phoneRaw: '+16196497221',
+    address: {
+      street: '1202 W Main St',
+      city: 'El Cajon',
+      state: 'CA',
+      zip: '92020',
+    },
+  },
+  {
+    slug: 'poway-ca',
+    city: 'Poway',
+    state: 'CA',
+    stateFullName: 'California',
+    zipCodes: ['92064'],
+    population: 50000,
+    neighborhoods: ['Old Poway', 'Poway Business Park', 'Garden Road', 'Twin Peaks', 'Midland', 'South Poway', 'Highland Ranch', 'Green Valley', 'Poway Road Corridor', 'Stone Canyon'],
+    landmarks: ['Old Poway Park', 'Blue Sky Ecological Reserve', 'Lake Poway', 'Kumeyaay-Ipai Interpretive Center', 'Iron Mountain Trail', 'Poway Center for the Performing Arts'],
+    majorRoads: ['CA-67', 'Poway Road', 'Espola Road', 'Twin Peaks Road', 'Community Road', 'Scripps Poway Parkway', 'Garden Road'],
+    nearbyLocations: ['santee-ca', 'el-cajon-ca', 'carlsbad-ca'],
+    climateNotes: `Poway, the "City in the Country," sits inland in North County San Diego with temperatures between coastal and deep inland areas—summer highs typically 80-95°F. The hilly terrain creates microclimates where some areas are warmer than others. Less humid than the coast but not as extreme as El Cajon, Poway's climate still demands reliable AC from May through October.`,
+    localInfo: `Poway maintains a rural character despite being in San Diego County, with larger lots, equestrian properties, and preserved open space. The city offers excellent schools and family-oriented amenities. Housing ranges from established 1970s-80s neighborhoods to newer developments. Many residents appreciate the balance of suburban amenities with a country feel.`,
+    serviceNotes: `Poway's blend of rural properties and suburban homes presents diverse HVAC needs—from standard residential systems to larger units for bigger homes and properties. We serve all Poway areas from established South Poway neighborhoods to the business park corridor. Our San Diego County coverage ensures fast response throughout Poway.`,
+    faqs: [
+      { question: 'How much does AC repair cost in Poway?', answer: 'AC repair in Poway typically costs $89-$500 for common repairs. Larger homes with oversized systems may cost more. We provide upfront pricing before beginning any work.' },
+      { question: 'Is Poway hotter than coastal San Diego?', answer: 'Yes, Poway is typically 10-20 degrees warmer than the coast in summer. While milder than El Cajon, Poway regularly reaches 85-95°F, requiring reliable AC during summer months.' },
+      { question: 'Do you service larger homes in Poway?', answer: 'Yes, many Poway properties are larger with correspondingly bigger HVAC systems. Our technicians are experienced with systems sized for larger homes and properties common in Poway.' },
+      { question: 'How quickly can you reach Poway for emergencies?', answer: 'We typically respond to Poway AC emergencies within 1-2 hours. Our presence in San Diego County enables fast response throughout North County inland communities.' },
+      { question: 'What maintenance do Poway AC systems need?', answer: 'Poway\'s moderate inland climate requires annual AC maintenance, ideally in spring. The mix of dust from trails and pollen from surrounding natural areas means filter changes may be needed more frequently.' },
+      { question: 'Do you serve the rural areas around Poway?', answer: 'Yes, we serve all of Poway including rural properties, equestrian areas, and the surrounding unincorporated communities. We\'re experienced with the unique needs of larger rural properties.' },
+    ],
+    metaTitle: 'Poway CA AC Repair & HVAC Service | City in the Country Experts | Air Conditioning Champ',
+    metaDescription: 'Expert AC repair in Poway, CA. Serving the "City in the Country" and all North County. Same-day service, all brands. Call (858) 256-1901!',
+    keyTakeaways: [
+      'Same-day AC repair throughout Poway and North County San Diego',
+      'Experienced with larger homes and rural properties common in Poway',
+      'Serving Old Poway, Garden Road, and all Poway neighborhoods',
+      '24/7 emergency service for inland North County communities',
+    ],
+    hasGBP: true,
+    phone: '(858) 256-1901',
+    phoneRaw: '+18582561901',
+    address: {
+      street: '12147 Kirkham Rd',
+      city: 'Poway',
+      state: 'CA',
+      zip: '92064',
+    },
+  },
+  // === CALIFORNIA - ORANGE COUNTY ===
+  {
+    slug: 'orange-ca',
+    city: 'Orange',
+    state: 'CA',
+    stateFullName: 'California',
+    zipCodes: ['92856', '92857', '92859', '92862', '92863', '92864', '92865', '92866', '92867', '92868', '92869'],
+    population: 140000,
+    neighborhoods: ['Old Towne Orange', 'Orange Park Acres', 'Villa Park', 'Santiago Hills', 'El Modena', 'Olive', 'Chapman University Area', 'Orange Hills', 'Anaheim Hills Adjacent', 'Cowan Heights'],
+    landmarks: ['Old Towne Orange Plaza', 'Chapman University', 'Santiago Oaks Regional Park', 'Irvine Regional Park', 'Peters Canyon Regional Park', 'The Outlets at Orange', 'Angel Stadium nearby'],
+    majorRoads: ['CA-55 (Costa Mesa Freeway)', 'CA-22', 'CA-57', 'Chapman Avenue', 'Tustin Street', 'Katella Avenue', 'Santiago Canyon Road', 'Glassell Street'],
+    nearbyLocations: [],
+    climateNotes: `Orange, CA has a Mediterranean climate with warm, dry summers and mild winters. Summer temperatures typically reach 78-85°F but can spike significantly higher during Santa Ana wind events (10-25 per year), when temperatures can reach 104-106°F. These hot, dry Santa Ana winds create critical HVAC demands with sudden temperature increases. The area enjoys 284 sunny days annually, meaning consistent AC use from May through October.`,
+    localInfo: `Orange is a historic Orange County city known for its charming Old Towne district with the famous traffic circle and antique shops. The city balances historic charm with modern amenities, hosting Chapman University and diverse neighborhoods from rural Orange Park Acres to suburban developments. Orange offers more affordable housing than coastal OC while maintaining excellent schools and community character.`,
+    serviceNotes: `Orange's location in central Orange County means dealing with both typical summer heat and extreme Santa Ana wind events. We serve all Orange neighborhoods from historic Old Towne to the hillside communities. Our Orange County presence enables fast response throughout the city and surrounding areas.`,
+    faqs: [
+      { question: 'How much does AC repair cost in Orange, CA?', answer: 'AC repair in Orange typically costs $75-$500 for common repairs. Diagnostic fees range from $75-$150 and are usually applied to repair costs. Major repairs like compressor replacement cost $1,500-$3,500.' },
+      { question: 'How do Santa Ana winds affect my AC system?', answer: 'Santa Ana winds bring sudden heat spikes (104°F+) that stress your AC system. The hot, dry air forces your AC to work overtime. We recommend having your system checked before Santa Ana season (typically fall) and addressing any issues promptly.' },
+      { question: 'Do you offer 24/7 emergency AC repair in Orange?', answer: 'Yes, we provide 24/7 emergency AC repair in Orange. During Santa Ana events when temperatures spike suddenly, AC failures become urgent emergencies. Our technicians respond quickly throughout Orange County.' },
+      { question: 'What AC maintenance is needed in Orange County\'s climate?', answer: 'Orange County\'s sunny climate with 284+ sunny days and occasional Santa Ana heat waves requires annual AC maintenance. We recommend spring tune-ups before summer and fall inspections before Santa Ana season.' },
+      { question: 'How long do AC units last in Orange County?', answer: 'AC units in Orange County typically last 15-20 years with proper maintenance. The moderate climate is easier on systems than desert or humid regions, though Santa Ana events can stress older units.' },
+      { question: 'Do you service all AC brands in Orange, CA?', answer: 'Yes, we service all major AC brands in Orange including Carrier, Trane, Lennox, Rheem, Goodman, York, and more. We work on both residential and light commercial systems.' },
+    ],
+    metaTitle: 'Orange CA AC Repair & HVAC Service | Orange County Experts | Air Conditioning Champ',
+    metaDescription: 'Expert AC repair in Orange, CA. Santa Ana wind specialists, 24/7 emergency service, Old Towne to Orange Hills. Call (657) 202-8088!',
+    keyTakeaways: [
+      '24/7 emergency AC repair throughout Orange and Orange County',
+      'Santa Ana wind specialists—prepared for sudden heat spikes to 104°F+',
+      'Serving all neighborhoods from Old Towne Orange to Orange Park Acres',
+      'Experienced with the diverse housing stock in this historic Orange County city',
+    ],
+    hasGBP: true,
+    phone: '(657) 202-8088',
+    phoneRaw: '+16572028088',
+    address: {
+      street: '383 N Cambridge St',
+      city: 'Orange',
+      state: 'CA',
+      zip: '92866',
+    },
+    googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4913.178439736143!2d-117.8441653!3d33.7930093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcd9004b6a13b5%3A0x5aee7f630d5a41d9!2sAir%20Conditioning%20Champ!5e1!3m2!1sen!2sus!4v1769278849899!5m2!1sen!2sus',
   },
 ];
 
