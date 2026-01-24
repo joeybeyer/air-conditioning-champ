@@ -59,18 +59,25 @@ export function Footer() {
             {/* Service Areas */}
             <div>
               <h3 className="text-lg font-semibold mb-4">Service Areas</h3>
-              <ul className="space-y-2">
-                {footerNavigation.locations.map((item) => (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="text-gray-300 hover:text-white transition-colors"
-                    >
-                      {item.label}, {item.state}
-                    </Link>
-                  </li>
+              <div className="space-y-4">
+                {Object.entries(footerNavigation.locationsByState).map(([state, locations]) => (
+                  <div key={state}>
+                    <h4 className="text-sm font-semibold text-gray-400 mb-1">{state}</h4>
+                    <ul className="space-y-1">
+                      {locations.map((item) => (
+                        <li key={item.href}>
+                          <Link
+                            href={item.href}
+                            className="text-gray-300 hover:text-white transition-colors text-sm"
+                          >
+                            {item.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
 
             {/* Company Links & Social */}

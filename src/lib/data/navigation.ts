@@ -54,11 +54,25 @@ export const footerNavigation = {
     label: service.name,
     href: `/services/${service.slug}`,
   })),
-  locations: LOCATIONS.map((location) => ({
-    label: location.city,
-    state: location.state,
-    href: `/locations/${location.slug}`,
-  })),
+  // Locations grouped by state for organized footer display
+  locationsByState: {
+    Arizona: LOCATIONS.filter((loc) => loc.state === 'AZ').map((location) => ({
+      label: location.city,
+      href: `/locations/${location.slug}`,
+    })),
+    California: LOCATIONS.filter((loc) => loc.state === 'CA').map((location) => ({
+      label: location.city,
+      href: `/locations/${location.slug}`,
+    })),
+    Nevada: LOCATIONS.filter((loc) => loc.state === 'NV').map((location) => ({
+      label: location.city,
+      href: `/locations/${location.slug}`,
+    })),
+    Texas: LOCATIONS.filter((loc) => loc.state === 'TX').map((location) => ({
+      label: location.city,
+      href: `/locations/${location.slug}`,
+    })),
+  },
   // GBP locations for the footer's "Our Locations" section
   gbpLocations: LOCATIONS.filter((location) => location.hasGBP).map((location) => ({
     city: location.city,
