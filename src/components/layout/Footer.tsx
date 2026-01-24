@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Building } from 'lucide-react';
+import { Phone, Mail, Clock, Facebook, Instagram, Building } from 'lucide-react';
 import { COMPANY } from '@/lib/data/company';
 import { footerNavigation } from '@/lib/data/navigation';
 import { Container } from '@/components/ui/Container';
@@ -32,13 +32,6 @@ export function Footer() {
                   <Mail size={18} />
                   {COMPANY.email}
                 </a>
-                <div className="flex items-start gap-2 text-gray-300">
-                  <MapPin size={18} className="flex-shrink-0 mt-0.5" />
-                  <span>
-                    {COMPANY.address.streetAddress}<br />
-                    {COMPANY.address.city}, {COMPANY.address.state} {COMPANY.address.postalCode}
-                  </span>
-                </div>
                 <div className="flex items-center gap-2 text-gray-300">
                   <Clock size={18} />
                   {COMPANY.hours.description}
