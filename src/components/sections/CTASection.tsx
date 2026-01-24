@@ -6,12 +6,16 @@ interface CTASectionProps {
   title?: string;
   description?: string;
   variant?: 'primary' | 'secondary';
+  phone?: string;
+  phoneRaw?: string;
 }
 
 export function CTASection({
   title = 'Ready for Reliable AC Service?',
   description = '24/7 Emergency Service Available • Same-Day Appointments • Upfront Pricing',
   variant = 'primary',
+  phone = COMPANY.phone,
+  phoneRaw = COMPANY.phoneRaw,
 }: CTASectionProps) {
   const bgClass = variant === 'primary' ? 'bg-primary-600' : 'bg-secondary-900';
 
@@ -23,11 +27,11 @@ export function CTASection({
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">{description}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={`tel:${COMPANY.phoneRaw}`}
+              href={`tel:${phoneRaw}`}
               className="inline-flex items-center justify-center gap-2 bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
             >
               <Phone size={22} />
-              Call {COMPANY.phone}
+              Call {phone}
             </a>
             <a
               href="/contact"

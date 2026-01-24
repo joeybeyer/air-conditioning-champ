@@ -25,6 +25,15 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/air-conditioner-repair-cave-creek-az',
+        destination: '/locations/cave-creek-az',
+        permanent: true, // 301 redirect
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

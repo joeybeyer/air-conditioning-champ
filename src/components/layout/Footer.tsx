@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Building } from 'lucide-react';
 import { COMPANY } from '@/lib/data/company';
 import { footerNavigation } from '@/lib/data/navigation';
 import { Container } from '@/components/ui/Container';
@@ -73,7 +73,7 @@ export function Footer() {
                       href={item.href}
                       className="text-gray-300 hover:text-white transition-colors"
                     >
-                      {item.label}, AZ
+                      {item.label}, {item.state}
                     </Link>
                   </li>
                 ))}
@@ -124,6 +124,40 @@ export function Footer() {
               </div>
             </div>
           </div>
+
+          {/* GBP Locations */}
+          {footerNavigation.gbpLocations.length > 0 && (
+            <div className="mt-12 pt-8 border-t border-gray-700">
+              <h3 className="text-lg font-semibold mb-6">Our Locations</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {footerNavigation.gbpLocations.map((location) => (
+                  <div key={location.href} className="text-sm">
+                    <Link
+                      href={location.href}
+                      className="flex items-center gap-2 font-semibold text-white hover:text-primary-400 transition-colors mb-2"
+                    >
+                      <Building size={16} />
+                      {location.city}, {location.state}
+                    </Link>
+                    {location.address && (
+                      <p className="text-gray-400 text-xs mb-1">
+                        {location.address.street}<br />
+                        {location.address.city}, {location.address.state} {location.address.zip}
+                      </p>
+                    )}
+                    {location.phone && (
+                      <a
+                        href={`tel:${location.phoneRaw}`}
+                        className="text-gray-300 hover:text-white transition-colors text-xs"
+                      >
+                        {location.phone}
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </Container>
       </div>
 

@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { MapPin, Thermometer, Clock, Phone } from 'lucide-react';
+import { MapPin, Thermometer, Clock, Phone, Building } from 'lucide-react';
 import { Hero } from '@/components/sections/Hero';
 import { KeyTakeaways } from '@/components/sections/KeyTakeaways';
 import { FAQ } from '@/components/sections/FAQ';
@@ -14,6 +14,7 @@ import { COMPANY } from '@/lib/data/company';
 import { SERVICES } from '@/lib/data/services';
 import { LOCATIONS, getLocationBySlug, getNearbyLocations } from '@/lib/data/locations';
 import { generateLocationSchema, generateFAQSchema, generateBreadcrumbSchema } from '@/lib/schema/generators';
+import { getPhoneForLocation, getAddressForLocation, formatAddress, getGoogleMapsEmbed } from '@/lib/utils/location-helpers';
 
 interface LocationPageProps {
   params: Promise<{ slug: string }>;
@@ -59,6 +60,11 @@ export default async function LocationPage({ params }: LocationPageProps) {
     { name: location.city, url: `${COMPANY.url}/locations/${location.slug}` },
   ]);
 
+  // Get location-specific phone and address
+  const { phone, phoneRaw } = getPhoneForLocation(location);
+  const address = getAddressForLocation(location);
+  const mapsEmbed = getGoogleMapsEmbed(location);
+
   return (
     <>
       <JsonLd data={[locationSchema, faqSchema, breadcrumbSchema].filter(Boolean)} />
@@ -72,7 +78,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
       <Hero
         title={`${location.city} Air Conditioning Services`}
-        subtitle={`Expert AC repair, installation, and maintenance in ${location.city}, Arizona. Fast response, upfront pricing, and quality service.`}
+        subtitle={`Expert AC repair, installation, and maintenance in ${location.city}, ${location.stateFullName}. Fast response, upfront pricing, and quality service.`}
         backgroundImage="/location_page_optimized.webp"
       />
 
@@ -86,10 +92,10 @@ export default async function LocationPage({ params }: LocationPageProps) {
               <Link href="/" className="text-primary-600 hover:text-primary-700 font-medium">
                 {COMPANY.name}
               </Link>{' '}
-              is proud to serve {location.city}, Arizona with comprehensive HVAC services.
+              is proud to serve {location.city}, {location.stateFullName} with comprehensive HVAC services.
               As a trusted{' '}
               <Link href="/" className="text-primary-600 hover:text-primary-700">
-                West Valley HVAC contractor
+                local HVAC contractor
               </Link>
               , we provide fast, reliable service to all {location.city} neighborhoods including{' '}
               {location.neighborhoods.slice(0, 3).join(', ')}, and surrounding areas.
@@ -101,18 +107,42 @@ export default async function LocationPage({ params }: LocationPageProps) {
             </p>
           </div>
 
-          {/* Google Business Listing Map - Surprise */}
-          {slug === 'surprise-az' && (
+          {/* Location Contact Info (for GBP locations) */}
+          {location.hasGBP && address && (
+            <div className="mt-8 bg-primary-50 rounded-lg p-6">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary-100 text-primary-600 p-3 rounded-lg">
+                    <Building size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-gray-900">{location.city} Location</h3>
+                    <p className="text-gray-600">{formatAddress(address)}</p>
+                  </div>
+                </div>
+                <a
+                  href={`tel:${phoneRaw}`}
+                  className="inline-flex items-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+                >
+                  <Phone size={20} />
+                  {phone}
+                </a>
+              </div>
+            </div>
+          )}
+
+          {/* Google Business Listing Map */}
+          {mapsEmbed && (
             <div className="mt-8 rounded-lg overflow-hidden shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4087.33564314096!2d-112.3365012!3d33.6371743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b4574338533c7%3A0x71bf2d0ecd377a5a!2sAir%20Conditioning%20Champ!5e1!3m2!1sen!2sus!4v1769205321320!5m2!1sen!2sus"
+                src={mapsEmbed}
                 width="100%"
                 height="400"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Air Conditioning Champ Surprise Location"
+                title={`Air Conditioning Champ ${location.city} Location`}
               ></iframe>
             </div>
           )}
@@ -236,6 +266,8 @@ export default async function LocationPage({ params }: LocationPageProps) {
       <CTASection
         title={`Need AC Service in ${location.city}?`}
         description={`Our technicians are ready to help ${location.city} homeowners with all their HVAC needs. Call now for fast, reliable service!`}
+        phone={phone}
+        phoneRaw={phoneRaw}
       />
     </>
   );

@@ -4,6 +4,7 @@
 import { COMPANY } from '@/lib/data/company';
 import { Service } from '@/lib/data/services';
 import { Location } from '@/lib/data/locations';
+import { getPhoneForLocation, getAddressForLocation } from '@/lib/utils/location-helpers';
 
 // Base organization schema used across pages
 export function generateOrganizationSchema() {
@@ -68,7 +69,7 @@ export function generateHVACBusinessSchema(locations: Location[]) {
     areaServed: locations.map((location) => ({
       '@type': 'City',
       name: location.city,
-      '@id': `https://en.wikipedia.org/wiki/${location.city.replace(' ', '_')},_Arizona`,
+      '@id': `https://en.wikipedia.org/wiki/${location.city.replace(/ /g, '_')},_${location.stateFullName.replace(/ /g, '_')}`,
     })),
     sameAs: [
       COMPANY.social.facebook,
@@ -114,6 +115,9 @@ export function generateServiceSchema(service: Service, locations: Location[]) {
 
 // Location-specific LocalBusiness schema
 export function generateLocationSchema(location: Location) {
+  const { phoneRaw } = getPhoneForLocation(location);
+  const address = getAddressForLocation(location);
+
   return {
     '@context': 'https://schema.org',
     '@type': 'HVACBusiness',
@@ -121,15 +125,16 @@ export function generateLocationSchema(location: Location) {
     name: `${COMPANY.name} - ${location.city}`,
     description: `Expert AC repair and HVAC services in ${location.city}, ${location.state}. ${COMPANY.shortDescription}`,
     url: `${COMPANY.url}/locations/${location.slug}`,
-    telephone: COMPANY.phoneRaw,
+    telephone: phoneRaw,
     email: COMPANY.email,
     image: `${COMPANY.url}/air_conditioning_champ_logo.png`,
     priceRange: '$$',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: location.city,
-      addressRegion: location.state,
-      postalCode: location.zipCodes[0],
+      streetAddress: address?.street,
+      addressLocality: address?.city || location.city,
+      addressRegion: address?.state || location.state,
+      postalCode: address?.zip || location.zipCodes[0],
       addressCountry: 'US',
     },
     openingHoursSpecification: {
@@ -191,7 +196,7 @@ export function generateContactPageSchema() {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
     name: 'Contact Air Conditioning Champ',
-    description: `Contact ${COMPANY.name} for AC repair and HVAC services in West Valley Arizona.`,
+    description: `Contact ${COMPANY.name} for AC repair and HVAC services in ${COMPANY.serviceArea}.`,
     url: `${COMPANY.url}/contact`,
     mainEntity: {
       '@type': 'HVACBusiness',

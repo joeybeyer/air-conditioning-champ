@@ -10,6 +10,16 @@ export interface NavItem {
   children?: NavItem[];
 }
 
+// Group locations by state for organized navigation
+const locationsByState = LOCATIONS.reduce((acc, location) => {
+  const state = location.stateFullName;
+  if (!acc[state]) {
+    acc[state] = [];
+  }
+  acc[state].push(location);
+  return acc;
+}, {} as Record<string, typeof LOCATIONS>);
+
 export const mainNavigation: NavItem[] = [
   {
     label: 'Services',
@@ -22,10 +32,12 @@ export const mainNavigation: NavItem[] = [
   {
     label: 'Service Areas',
     href: '/locations',
-    children: LOCATIONS.map((location) => ({
-      label: location.city,
-      href: `/locations/${location.slug}`,
-    })),
+    children: Object.entries(locationsByState).flatMap(([state, locations]) =>
+      locations.map((location) => ({
+        label: `${location.city}, ${location.state}`,
+        href: `/locations/${location.slug}`,
+      }))
+    ),
   },
   {
     label: 'About',
@@ -44,7 +56,17 @@ export const footerNavigation = {
   })),
   locations: LOCATIONS.map((location) => ({
     label: location.city,
+    state: location.state,
     href: `/locations/${location.slug}`,
+  })),
+  // GBP locations for the footer's "Our Locations" section
+  gbpLocations: LOCATIONS.filter((location) => location.hasGBP).map((location) => ({
+    city: location.city,
+    state: location.state,
+    href: `/locations/${location.slug}`,
+    phone: location.phone,
+    phoneRaw: location.phoneRaw,
+    address: location.address,
   })),
   company: [
     { label: 'About Us', href: '/about' },
