@@ -639,39 +639,6 @@ export const LOCATIONS: Location[] = [
     },
     googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4913.178439736143!2d-117.8441653!3d33.7930093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcd9004b6a13b5%3A0x5aee7f630d5a41d9!2sAir%20Conditioning%20Champ!5e1!3m2!1sen!2sus!4v1769278849899!5m2!1sen!2sus',
   },
-  // === CALIFORNIA - SAN FRANCISCO ===
-  {
-    slug: 'san-francisco-ca',
-    city: 'San Francisco',
-    state: 'CA',
-    stateFullName: 'California',
-    zipCodes: ['94102', '94103', '94104', '94105', '94107', '94108', '94109', '94110', '94111', '94112', '94114', '94115', '94116', '94117', '94118', '94119', '94120', '94121', '94122', '94123', '94124', '94125', '94126', '94127', '94128', '94129', '94130', '94131', '94132', '94133', '94134', '94158'],
-    population: 874000,
-    neighborhoods: ['Pacific Heights', 'Marina District', 'Nob Hill', 'Russian Hill', 'North Beach', 'Fishermans Wharf', 'SOMA', 'Mission District', 'Castro', 'Haight-Ashbury', 'Richmond District', 'Sunset District', 'Noe Valley', 'Bernal Heights', 'Potrero Hill', 'Presidio Heights', 'Sea Cliff', 'Financial District', 'Chinatown', 'Tenderloin'],
-    landmarks: ['Golden Gate Bridge', 'Alcatraz Island', 'Fishermans Wharf', 'Pier 39', 'Chinatown', 'Union Square', 'Golden Gate Park', 'Coit Tower', 'Lombard Street', 'Oracle Park', 'Cable Cars', 'Palace of Fine Arts', 'Ghirardelli Square', 'Ferry Building'],
-    majorRoads: ['US-101', 'I-80', 'I-280', 'CA-1', 'Market Street', 'Van Ness Avenue', 'Geary Boulevard', '19th Avenue', 'Lombard Street', 'The Embarcadero'],
-    nearbyLocations: ['poway-ca', 'santee-ca'],
-    climateNotes: `San Francisco has a unique Mediterranean climate characterized by cool, foggy summers and mild, wet winters. Summer temperatures typically range from 55-70°F—much cooler than inland California. The famous fog, especially in western neighborhoods like the Sunset and Richmond, keeps temperatures moderate but creates high humidity that affects HVAC systems differently. However, microclimates vary significantly—sunny Mission District can be 10-15°F warmer than foggy Ocean Beach on the same day.`,
-    localInfo: `San Francisco is one of the most iconic cities in the United States, known for its steep hills, cable cars, Victorian architecture, and diverse neighborhoods. The city features a wide range of housing from historic Victorian and Edwardian homes to modern high-rises. Many older buildings have unique HVAC challenges due to their age and architecture. San Francisco's tech industry has driven significant residential development and renovation.`,
-    serviceNotes: `San Francisco's unique climate and historic housing stock present specialized HVAC challenges. While cooling needs are less intense than inland areas, heating and humidity control are essential year-round. We service all San Francisco neighborhoods from the foggy Outer Sunset to sunny Potrero Hill. Our technicians are experienced with the city's diverse building types from Victorian-era homes to modern condos.`,
-    faqs: [
-      { question: 'Do San Francisco homes really need AC?', answer: 'While San Francisco is cooler than most California cities, AC is increasingly important. Heat waves are becoming more common, some neighborhoods (Mission, SOMA, Potrero Hill) get significantly warmer, and AC helps with air quality during wildfire smoke season.' },
-      { question: 'How much does AC installation cost in San Francisco?', answer: 'AC installation in San Francisco typically costs $5,000-$15,000 depending on system type and installation complexity. Many older homes require ductless mini-split systems ($3,000-$8,000) since they lack existing ductwork.' },
-      { question: 'What HVAC system works best for San Francisco Victorian homes?', answer: 'Ductless mini-split systems are often ideal for San Francisco Victorians. They provide efficient heating and cooling without requiring ductwork, preserve historic architecture, and allow zone control for multi-story homes.' },
-      { question: 'How does San Francisco fog affect HVAC systems?', answer: 'San Francisco fog creates high humidity that can lead to condensation, mold, and corrosion in HVAC systems. Regular maintenance including coil cleaning and drain line clearing is essential, especially in foggy western neighborhoods.' },
-      { question: 'Do you offer emergency HVAC service in San Francisco?', answer: 'Yes, we provide 24/7 emergency HVAC service throughout San Francisco. Whether its a heating failure during a cold foggy night or AC during an unexpected heat wave, were ready to respond.' },
-      { question: 'What neighborhoods in San Francisco do you serve?', answer: 'We serve all San Francisco neighborhoods including Pacific Heights, Marina, SOMA, Mission, Castro, Richmond, Sunset, Noe Valley, and everywhere in between.' },
-    ],
-    metaTitle: 'San Francisco AC Repair & HVAC Service | Air Conditioning Champ',
-    metaDescription: 'Expert HVAC services in San Francisco, CA. Heating, cooling, and humidity control for the citys unique climate. Victorian home specialists. Call now!',
-    keyTakeaways: [
-      'Full HVAC service throughout all San Francisco neighborhoods',
-      'Victorian and historic home specialists with ductless mini-split expertise',
-      'Understanding San Franciscos unique microclimates from foggy Sunset to sunny Mission',
-      '24/7 emergency service for heating and cooling emergencies',
-    ],
-    hasGBP: true,
-  },
 ];
 
 export function getLocationBySlug(slug: string): Location | undefined {
