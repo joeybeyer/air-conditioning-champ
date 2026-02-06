@@ -202,6 +202,21 @@ export default async function LocationPage({ params }: LocationPageProps) {
             </Card>
           </div>
 
+          {location.mapEmbed && (
+            <div className="my-12 rounded-lg overflow-hidden shadow-lg">
+              <iframe
+                src={location.mapEmbed}
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title={`${location.city} Service Area Map`}
+              ></iframe>
+            </div>
+          )}
+
           {/* Neighborhoods & Service Areas */}
           <div className="my-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">{location.city} Neighborhoods We Serve</h2>

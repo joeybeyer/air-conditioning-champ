@@ -36,6 +36,7 @@ export interface Location {
   phoneRaw?: string;           // Location-specific phone (raw for tel: links)
   address?: LocationAddress;   // Physical address for GBP locations
   googleMapsEmbed?: string;    // Google Maps embed URL
+  mapEmbed?: string;           // Custom map embed URL
   hasGBP: boolean;             // Whether this location has a Google Business Profile
   parentGBP?: string;          // Slug of GBP location to use for phone (for non-GBP locations)
 }
@@ -670,6 +671,7 @@ export const LOCATIONS: Location[] = [
       'Understanding San Franciscos unique microclimates from foggy Sunset to sunny Mission',
       '24/7 emergency service for heating and cooling emergencies',
     ],
+    mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3155.021590819169!2d-122.4776033!3d37.742637699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7d0056cfba4d%3A0x5e1cc4ee3dbc3f9a!2sAir%20Conditioning%20Champ!5e0!3m2!1sen!2sus!4v1770351211980!5m2!1sen!2sus',
     hasGBP: true,
   },
 ];
