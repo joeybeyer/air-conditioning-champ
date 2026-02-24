@@ -172,7 +172,7 @@ export const LOCATIONS: Location[] = [
       state: 'AZ',
       zip: '85301',
     },
-    googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.3489065917515!2d-112.337549!3d33.466265799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b39a6314866ef%3A0x5f771a32b1c5d352!2sAir%20Conditioning%20Champ!5e0!3m2!1sen!2sus!4v1771962895076!5m2!1sen!2sus',
+    // googleMapsEmbed: TODO - need correct Glendale embed
   },
   {
     slug: 'goodyear-az',
