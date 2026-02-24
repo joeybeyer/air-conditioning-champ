@@ -198,14 +198,9 @@ export const LOCATIONS: Location[] = [
     metaTitle: 'Goodyear AZ AC Repair & Service | Air Conditioning Champ',
     metaDescription: 'Expert AC repair and HVAC service in Goodyear, Arizona. Serving Estrella Mountain Ranch, Palm Valley & all communities. 24/7 emergency service. Call now!',
     keyTakeaways: ['Serving all Goodyear communities including Estrella Mountain Ranch and Pebble Creek', 'Experienced with newer construction HVAC systems and builder warranty service', '24/7 emergency response in one of Arizona\'s fastest-growing cities'],
-    hasGBP: true,
-    address: {
-      street: '14555 W Yuma Rd',
-      city: 'Goodyear',
-      state: 'AZ',
-      zip: '85338',
-    },
-    googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.3489065917515!2d-112.337549!3d33.466265799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b39a6314866ef%3A0x5f771a32b1c5d352!2sAir%20Conditioning%20Champ!5e0!3m2!1sen!2sus!4v1771962895076!5m2!1sen!2sus',
+    hasGBP: false,
+    parentGBP: 'avondale-az',
+    // No GMB for Goodyear - using Avondale as parent
   },
   {
     slug: 'avondale-az',
