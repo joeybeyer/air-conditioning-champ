@@ -45,11 +45,20 @@ export const metadata: Metadata = {
     siteName: COMPANY.name,
     title: `${COMPANY.name} | Expert HVAC Services`,
     description: COMPANY.description,
+    images: [
+      {
+        url: '/hero_image_optimized.jpg',
+        width: 1200,
+        height: 630,
+        alt: `${COMPANY.name} - Expert HVAC Services`,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${COMPANY.name} | Expert HVAC Services`,
     description: COMPANY.description,
+    images: ['/hero_image_optimized.jpg'],
   },
   robots: {
     index: true,
