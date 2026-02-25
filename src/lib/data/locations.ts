@@ -206,7 +206,7 @@ export const LOCATIONS: Location[] = [
       state: 'AZ',
       zip: '85338',
     },
-    googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.1!2d-112.3704194!3d33.4349325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b39baeec0481d%3A0xd8934d76310ba95!2sAir%20Conditioning%20Champ!5e0!3m2!1sen!2sus',
+    googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.5516136253527!2d-112.37041939999999!3d33.434932499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b39baeec0481d%3A0xd8934d76310ba95!2sAir%20Conditioning%20Champ!5e0!3m2!1sen!2sus!4v1771983423297!5m2!1sen!2sus',
   },
   {
     slug: 'avondale-az',
