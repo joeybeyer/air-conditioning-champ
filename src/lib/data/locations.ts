@@ -703,6 +703,48 @@ export const LOCATIONS: Location[] = [
     mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3155.021590819169!2d-122.4776033!3d37.742637699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7d0056cfba4d%3A0x5e1cc4ee3dbc3f9a!2sAir%20Conditioning%20Champ!5e0!3m2!1sen!2sus!4v1770351211980!5m2!1sen!2sus',
     hasGBP: true,
   },
+  // === CALIFORNIA - LOS ANGELES COUNTY ===
+  {
+    slug: 'north-hollywood-ca',
+    city: 'North Hollywood',
+    state: 'CA',
+    stateFullName: 'California',
+    zipCodes: ['91601', '91602', '91603', '91604', '91605', '91606', '91607', '91608'],
+    population: 87000,
+    neighborhoods: ['NoHo Arts District', 'Valley Village', 'Toluca Lake', 'Studio City', 'Magnolia Park', 'Lankershim', 'Vineland', 'Colfax Meadows'],
+    landmarks: ['NoHo Arts District', 'Academy of Television Arts & Sciences', 'El Portal Theatre', 'Iliad Bookshop', 'The Federal', 'Lankershim Arts Center'],
+    majorRoads: ['US-101 (Hollywood Freeway)', 'CA-170 (Hollywood Freeway)', 'Lankershim Boulevard', 'Magnolia Boulevard', 'Vineland Avenue', 'Burbank Boulevard'],
+    nearbyLocations: ['santee-ca', 'san-francisco-ca'],
+    climateNotes: `North Hollywood experiences a Mediterranean climate with hot, dry summers and mild winters. Summer temperatures regularly reach 90-100°F in the San Fernando Valley, with the area being notably hotter than coastal LA due to its inland location. The valley heat means AC systems run extensively from May through October.`,
+    localInfo: `North Hollywood is a vibrant neighborhood in the San Fernando Valley known for its thriving arts scene, particularly the NoHo Arts District. The area has seen significant revitalization with new restaurants, theaters, and the Metro B Line connection to downtown LA. Housing ranges from classic mid-century apartments to newer developments.`,
+    serviceNotes: `North Hollywood's San Fernando Valley location means hotter temperatures than coastal LA, putting extra demand on AC systems. We serve all North Hollywood neighborhoods including the Arts District, Valley Village, and surrounding areas with fast response times.`,
+    faqs: [
+      { question: 'How quickly can you respond to AC emergencies in North Hollywood?', answer: 'We typically respond to AC emergencies in North Hollywood within 1-2 hours. Our technicians are stationed throughout the San Fernando Valley for rapid response.' },
+      { question: 'Why is North Hollywood hotter than other parts of LA?', answer: 'North Hollywood sits in the San Fernando Valley, which is surrounded by mountains that trap heat. This creates temperatures 10-15°F higher than coastal areas, meaning your AC works much harder.' },
+      { question: 'How much does AC repair cost in North Hollywood?', answer: 'AC repair in North Hollywood typically costs $89-$500 for common repairs. Our diagnostic fee is $89 and is applied toward the repair cost.' },
+      { question: 'Do you service the NoHo Arts District?', answer: 'Yes, we service all of North Hollywood including the NoHo Arts District, Valley Village, and all surrounding neighborhoods.' },
+      { question: 'What AC brands do you service in North Hollywood?', answer: 'We service all major AC brands in North Hollywood including Carrier, Trane, Lennox, Rheem, Goodman, and more.' },
+      { question: 'Do you offer emergency AC service on weekends in North Hollywood?', answer: 'Yes, we provide 24/7 emergency AC service in North Hollywood including weekends and holidays. Valley heat doesn\'t take days off, and neither do we.' },
+    ],
+    metaTitle: 'North Hollywood CA AC Repair & HVAC Service | Air Conditioning Champ',
+    metaDescription: 'Expert AC repair in North Hollywood, CA. San Fernando Valley heat specialists, 24/7 emergency service, all brands. Serving NoHo Arts District & Valley Village. Call (747) 318-0005!',
+    keyTakeaways: [
+      'Same-day AC repair throughout North Hollywood and the San Fernando Valley',
+      'Experienced with valley heat conditions that stress AC systems',
+      'Serving NoHo Arts District, Valley Village, and all North Hollywood areas',
+      '24/7 emergency service with fast response times',
+    ],
+    hasGBP: true,
+    phone: '(747) 318-0005',
+    phoneRaw: '+17473180005',
+    address: {
+      street: '11734 Hamlin St',
+      city: 'North Hollywood',
+      state: 'CA',
+      zip: '91606',
+    },
+    googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3300.3497911261993!2d-118.38904740000001!3d34.188538099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c29500281c4b85%3A0xd1defc0dc6e073f4!2sAir%20Conditioning%20Champ!5e0!3m2!1sen!2sus!4v1771984554958!5m2!1sen!2sus',
+  },
 ];
 
 export function getLocationBySlug(slug: string): Location | undefined {
