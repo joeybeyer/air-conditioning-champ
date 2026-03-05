@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Conditioning Champ | Expert HVAC Services in San Diego, CA</title>
+    <meta name="description" content="Professional HVAC contractor in San Diego, CA. Expert AC repair, installation & maintenance. Licensed & insured. Call (619) 735-9311 for free estimate.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066CC;
+            --primary-dark: #0052A3;
+            --primary-light: #E6F2FF;
+            --secondary: #00A3E0;
+            --accent: #FF6B35;
+            --text-dark: #1a1a2e;
+            --text-gray: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --success: #10b981;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--bg-light);
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .phone-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-accent:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #003366 100%);
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            color: white;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-cta .btn {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+
+        .hero-cta .btn-white {
+            background: white;
+            color: var(--primary);
+        }
+
+        .hero-cta .btn-white:hover {
+            background: var(--primary-light);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        .hero-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-light);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .hero-phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            background: var(--primary);
+            color: white;
+            padding: 1.25rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .hero-phone:hover {
+            background: var(--primary-dark);
+            transform: scale(1.02);
+        }
+
+        .hero-phone-small {
+            font-size: 1rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            background: white;
+            padding: 5rem 2rem;
+        }
+
+        .why-us-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+            color: white;
+        }
+
+        .feature h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature p {
+            color: var(--text-gray);
+        }
+
+        /* Service Areas */
+        .areas {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .area-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.25rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .area-card:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .area-card strong {
+            display: block;
+            font-weight: 600;
+        }
+
+        /* Map Section */
+        .map-section {
+            background: white;
+            padding: 5rem 2rem;
+        }
+
+        .map-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .map-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .map-content p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .contact-info li:last-child {
+            border-bottom: none;
+        }
+
+        .contact-info span {
+            font-weight: 600;
+            color: var(--text-dark);
+            min-width: 80px;
+        }
+
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .map-container {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 5rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-gray);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #003366 100%);
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .contact-inner {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-form-container {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-form-container h2 {
+            text-align: center;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .contact-form-container .subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer h4 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer p,
+        .footer a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.875rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .map-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .header-cta .btn {
+                display: none;
+            }
+
+            .header-cta .phone-link {
+                display: flex;
+            }
+
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+        }
+
+        /* CTA Bar */
+        .cta-bar {
+            background: var(--accent);
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+
+        .cta-bar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .cta-bar p {
+            color: white;
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        .cta-bar .btn {
+            background: white;
+            color: var(--accent);
+        }
+
+        .cta-bar .btn:hover {
+            background: var(--text-dark);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .cta-bar-inner {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <div class="logo-icon">❄</div>
+                Air Conditioning Champ
+            </div>
+            <div class="header-cta">
+                <a href="tel:+16197359311" class="phone-link">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.161 15.161 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1.01A11.935 11.935 0 0 1 8.56 3.99c0-1.48-.27-2.9-.76-4.2a.98.98 0 0 0-.65-.54C6.38.99 4.92.99 3.86 2.13L2.28 3.7A11.935 11.935 0 0 0 1 12c0 6.63 5.37 12 12 12 1.36 0 2.67-.23 3.89-.63l1.57-1.57c.47-.47.74-1.1.74-1.76 0-.47-.13-.92-.38-1.31l-.05-.05z"/></svg>
+                    (619) 735-9311
+                </a>
+                <a href="#contact" class="btn btn-primary">Get Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CTA Bar -->
+    <div class="cta-bar">
+        <div class="cta-bar-inner">
+            <p>Need emergency AC repair in San Diego? We're available 24/7!</p>
+            <a href="tel:+16197359311" class="btn">Call Now</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>✓</span> Licensed & Insured HVAC Contractor
+                </div>
+                <h1>Expert Air Conditioning Services in San Diego</h1>
+                <p>Keep your home cool and comfortable with professional AC repair, installation, and maintenance services from San Diego's trusted HVAC experts.</p>
+                <div class="hero-cta">
+                    <a href="tel:+16197359311" class="btn btn-accent">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.161 15.161 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1.01A11.935 11.935 0 0 1 8.56 3.99c0-1.48-.27-2.9-.76-4.2a.98.98 0 0 0-.65-.54C6.38.99 4.92.99 3.86 2.13L2.28 3.7A11.935 11.935 0 0 0 1 12c0 6.63 5.37 12 12 12 1.36 0 2.67-.23 3.89-.63l1.57-1.57c.47-.47.74-1.1.74-1.76 0-.47-.13-.92-.38-1.31l-.05-.05z"/></svg>
+                        (619) 735-9311
+                    </a>
+                    <a href="#contact" class="btn btn-white">Schedule Service</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value">500+</div>
+                        <div class="stat-label">5-Star Reviews</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">Emergency Service</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">Same Day</div>
+                        <div class="stat-label">Service Available</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-card">
+                <h3>Request Free Estimate</h3>
+                <div class="trust-badges">
+                    <span class="trust-badge">✓ Licensed</span>
+                    <span class="trust-badge">✓ Insured</span>
+                    <span class="trust-badge">✓ Upfront Pricing</span>
+                </div>
+                <a href="tel:+16197359311" class="hero-phone">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.161 15.161 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1.01A11.935 11.935 0 0 1 8.56 3.99c0-1.48-.27-2.9-.76-4.2a.98.98 0 0 0-.65-.54C6.38.99 4.92.99 3.86 2.13L2.28 3.7A11.935 11.935 0 0 0 1 12c0 6.63 5.37 12 12 12 1.36 0 2.67-.23 3.89-.63l1.57-1.57c.47-.47.74-1.1.74-1.76 0-.47-.13-.92-.38-1.31l-.05-.05z"/></svg>
+                    <div>
+                        <div class="hero-phone-small">Call for instant quote</div>
+                        (619) 735-9311
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our HVAC Services</h2>
+            <p>Comprehensive heating and cooling solutions for San Diego homeowners</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>AC Repair</h3>
+                <p>Fast, reliable air conditioning repair services. We diagnose and fix all AC issues to restore your comfort quickly.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚙️</div>
+                <h3>AC Installation</h3>
+                <p>Professional new AC installation and replacement. We help you choose the right system for your home and budget.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>AC Maintenance</h3>
+                <p>Preventive maintenance plans to keep your AC running efficiently and extend the life of your system.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔥</div>
+                <h3>Heating Repair</h3>
+                <p>Expert furnace and heating system repair services to keep your home warm during San Diego's cooler months.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌡️</div>
+                <h3>Ductwork</h3>
+                <p>Professional duct installation, repair, and cleaning to ensure proper airflow throughout your home.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚨</div>
+                <h3>Emergency Service</h3>
+                <p>24/7 emergency HVAC services when you need us most. Same-day service available for urgent repairs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+        <div class="why-us-inner">
+            <div class="section-header">
+                <h2>Why San Diego Chooses Us</h2>
+                <p>We're committed to providing the best HVAC services in San Diego County</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Fast Response Times</h3>
+                    <p>Same-day service available. We understand San Diego's heat and respond quickly to restore your comfort.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <h3>Upfront Pricing</h3>
+                    <p>No hidden fees. We provide clear, written estimates before any work begins.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Licensed & Insured</h3>
+                    <p>Fully licensed HVAC contractors. Your home and property are protected with us.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⭐</div>
+                    <h3>500+ 5-Star Reviews</h3>
+                    <p>San Diego homeowners trust us with their comfort. Read our reviews to see why.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="areas" id="areas">
+        <div class="section-header">
+            <h2>San Diego Neighborhoods We Serve</h2>
+            <p>Proudly serving all of San Diego County</p>
+        </div>
+        <div class="areas-grid">
+            <div class="area-card"><strong>Clairemont</strong></div>
+            <div class="area-card"><strong>Kearny Mesa</strong></div>
+            <div class="area-card"><strong>Linda Vista</strong></div>
+            <div class="area-card"><strong>University City</strong></div>
+            <div class="area-card"><strong>Mira Mesa</strong></div>
+            <div class="area-card"><strong>Scripps Ranch</strong></div>
+            <div class="area-card"><strong>Pacific Beach</strong></div>
+            <div class="area-card"><strong>La Jolla</strong></div>
+            <div class="area-card"><strong>North Park</strong></div>
+            <div class="area-card"><strong>Hillcrest</strong></div>
+            <div class="area-card"><strong>Mission Valley</strong></div>
+            <div class="area-card"><strong>Downtown SD</strong></div>
+            <div class="area-card"><strong>Point Loma</strong></div>
+            <div class="area-card"><strong>Ocean Beach</strong></div>
+            <div class="area-card"><strong>Mission Hills</strong></div>
+            <div class="area-card"><strong>Old Town</strong></div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-inner">
+            <div class="map-content">
+                <h2>Visit Our San Diego Office</h2>
+                <p>We're conveniently located in the Clairemont area to serve all of San Diego County.</p>
+                <ul class="contact-info">
+                    <li>
+                        <span>Address:</span>
+                        <div>5174 Dubois Dr<br>San Diego, CA 92117</div>
+                    </li>
+                    <li>
+                        <span>Phone:</span>
+                        <div><a href="tel:+16197359311">(619) 735-9311</a></div>
+                    </li>
+                    <li>
+                        <span>Hours:</span>
+                        <div>Mon-Fri: 7AM-7PM<br>Sat: 8AM-5PM<br>Sun: Emergency Only</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.2339352517406!2d-117.20083689999998!3d32.83905719999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc0100462c0531%3A0xcbe7d45380bbe6fd!2sAir%20Conditioning%20Champ!5e0!3m2!1sen!2sus!4v1772675637715!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">How quickly can you respond to AC emergencies in San Diego?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">We offer same-day service for most calls and 24/7 emergency availability. Our typical response time within San Diego is 1-2 hours for urgent repairs.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">Do you offer free estimates for AC installation?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">Yes, we provide free, no-obligation estimates for all HVAC services. We'll assess your needs and provide upfront pricing before any work begins.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">What brands of AC systems do you service?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">We service all major brands including Carrier, Trane, Lennox, Rheem, Goodman, and more. Our technicians are certified to work on any make or model.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">How often should I service my AC in San Diego?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">We recommend annual AC maintenance before summer. In San Diego's climate, bi-annual service (spring and fall) helps ensure optimal performance year-round.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">Are your technicians licensed and insured?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">Yes, all our technicians are fully licensed, bonded, and insured. We're committed to providing professional, reliable service you can trust.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call Now CTA -->
+    <section class="contact-section" id="contact">
+        <div class="contact-inner">
+            <div class="contact-form-container" style="text-align: center;">
+                <h2>Ready to Get Started?</h2>
+                <p class="subtitle">Call now for a free quote - no waiting, no forms</p>
+                <a href="tel:+16197359311" class="hero-phone" style="font-size: 2rem; padding: 1.5rem 3rem; margin-bottom: 1.5rem;">
+                    <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.161 15.161 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1.01A11.935 11.935 0 0 1 8.56 3.99c0-1.48-.27-2.9-.76-4.2a.98.98 0 0 0-.65-.54C6.38.99 4.92.99 3.86 2.13L2.28 3.7A11.935 11.935 0 0 0 1 12c0 6.63 5.37 12 12 12 1.36 0 2.67-.23 3.89-.63l1.57-1.57c.47-.47.74-1.1.74-1.76 0-.47-.13-.92-.38-1.31l-.05-.05z"/></svg>
+                    <div>
+                        <div style="font-size: 0.9rem; font-weight: 400; opacity: 0.9;">Call Now for Free Quote</div>
+                        (619) 735-9311
+                    </div>
+                </a>
+                <p style="color: var(--text-gray); font-size: 1rem;">Our experts are standing by to help you with your AC needs</p>
+                <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary);">✓</div>
+                        <div style="font-size: 0.9rem; color: var(--text-gray);">Free Estimates</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary);">✓</div>
+                        <div style="font-size: 0.9rem; color: var(--text-gray);">Same Day Service</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary);">✓</div>
+                        <div style="font-size: 0.9rem; color: var(--text-gray);">Licensed & Insured</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Mobile Call Button -->
+    <div class="sticky-call-bar">
+        <a href="tel:+16197359311" class="sticky-call-btn">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.161 15.161 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1.01A11.935 11.935 0 0 1 8.56 3.99c0-1.48-.27-2.9-.76-4.2a.98.98 0 0 0-.65-.54C6.38.99 4.92.99 3.86 2.13L2.28 3.7A11.935 11.935 0 0 0 1 12c0 6.63 5.37 12 12 12 1.36 0 2.67-.23 3.89-.63l1.57-1.57c.47-.47.74-1.1.74-1.76 0-.47-.13-.92-.38-1.31l-.05-.05z"/></svg>
+            Call Now
+        </a>
+    </div>
+
+    <style>
+        .sticky-call-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--primary);
+            padding: 1rem;
+            z-index: 9999;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+        }
+        .sticky-call-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            background: white;
+            color: var(--primary);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .sticky-call-btn:hover {
+            background: var(--primary-light);
+            transform: scale(1.02);
+        }
+        @media (max-width: 768px) {
+            .sticky-call-bar {
+                display: block;
+            }
+        }
+    </style>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div>
+                <h4>Air Conditioning Champ</h4>
+                <p>San Diego's trusted HVAC contractor. Professional AC repair, installation, and maintenance services.</p>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <p>5174 Dubois Dr<br>San Diego, CA 92117</p>
+                <a href="tel:+16197359311">(619) 735-9311</a>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <a href="#services">AC Repair</a>
+                <a href="#services">AC Installation</a>
+                <a href="#services">AC Maintenance</a>
+                <a href="#services">Heating Repair</a>
+            </div>
+            <div>
+                <h4>Service Areas</h4>
+                <a href="#areas">Clairemont</a>
+                <a href="#areas">Kearny Mesa</a>
+                <a href="#areas">La Jolla</a>
+                <a href="#areas">Pacific Beach</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Air Conditioning Champ. All rights reserved. Licensed HVAC Contractor.
+        </div>
+    </footer>
+
+    <script>
+        // Lead attribution tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            document.getElementById('formSource').value = window.location.href;
+            document.getElementById('formReferrer').value = document.referrer || 'direct';
+            document.getElementById('utmSource').value = urlParams.get('utm_source') || '';
+            document.getElementById('utmMedium').value = urlParams.get('utm_medium') || '';
+            document.getElementById('utmCampaign').value = urlParams.get('utm_campaign') || '';
+        });
+
+        // Form submission
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            
+            // In production, send to your lead API
+            console.log('Lead submitted:', data);
+            
+            alert('Thank you! Your quote request has been submitted. We will contact you within 24 hours.');
+            this.reset();
+        });
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://airconditioningchamp.com/#business",
+      "name": "Air Conditioning Champ",
+      "description": "Professional HVAC contractor in San Diego, CA providing AC repair, installation, and maintenance services.",
+      "url": "https://airconditioningchamp.com",
+      "telephone": "+1-619-735-9311",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "5174 Dubois Dr",
+        "addressLocality": "San Diego",
+        "addressRegion": "CA",
+        "postalCode": "92117",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "32.83905719999999",
+        "longitude": "-117.20083689999998"
+      },
+      "openingHours": ["Mo-Fr 07:00-19:00", "Sa 08:00-17:00"],
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "500"
+      },
+      "areaServed": [
+        {"@type": "City", "name": "San Diego"},
+        {"@type": "City", "name": "Clairemont"},
+        {"@type": "City", "name": "Kearny Mesa"},
+        {"@type": "City", "name": "La Jolla"},
+        {"@type": "City", "name": "Pacific Beach"}
+      ],
+      "serviceType": ["AC Repair", "AC Installation", "AC Maintenance", "Heating Repair", "HVAC Emergency"]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How quickly can you respond to AC emergencies in San Diego?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer same-day service for most calls and 24/7 emergency availability. Our typical response time within San Diego is 1-2 hours for urgent repairs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer free estimates for AC installation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we provide free, no-obligation estimates for all HVAC services. We'll assess your needs and provide upfront pricing before any work begins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What brands of AC systems do you service?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We service all major brands including Carrier, Trane, Lennox, Rheem, Goodman, and more. Our technicians are certified to work on any make or model."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I service my AC in San Diego?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We recommend annual AC maintenance before summer. In San Diego's climate, bi-annual service (spring and fall) helps ensure optimal performance year-round."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are your technicians licensed and insured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all our technicians are fully licensed, bonded, and insured. We're committed to providing professional, reliable service you can trust."
+          }
+        }
+      ]
+    }
+    </script>
+</body>
+</html>

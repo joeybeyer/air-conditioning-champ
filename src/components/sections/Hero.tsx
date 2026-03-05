@@ -8,6 +8,8 @@ interface HeroProps {
   subtitle: string;
   showCTAs?: boolean;
   backgroundImage?: string;
+  phone?: string;      // Optional local phone for location pages
+  phoneRaw?: string;   // Optional local phone raw for tel: links
 }
 
 export function Hero({
@@ -15,7 +17,12 @@ export function Hero({
   subtitle,
   showCTAs = true,
   backgroundImage = '/hero_image_optimized.webp',
+  phone,
+  phoneRaw,
 }: HeroProps) {
+  // Use local phone if provided, otherwise fall back to company phone
+  const displayPhone = phone || COMPANY.phone;
+  const displayPhoneRaw = phoneRaw || COMPANY.phoneRaw;
   return (
     <section className="relative bg-secondary-900 text-white overflow-hidden">
       {/* Background image */}
@@ -43,11 +50,11 @@ export function Hero({
             {showCTAs && (
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href={`tel:${COMPANY.phoneRaw}`}
+                  href={`tel:${displayPhoneRaw}`}
                   className="inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-700 transition-colors"
                 >
                   <Phone size={22} />
-                  Call {COMPANY.phone}
+                  Call {displayPhone}
                 </a>
                 <a
                   href="/contact"

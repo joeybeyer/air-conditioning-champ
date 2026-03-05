@@ -80,6 +80,8 @@ export default async function LocationPage({ params }: LocationPageProps) {
         title={`${location.city} Air Conditioning Services`}
         subtitle={`Expert AC repair, installation, and maintenance in ${location.city}, ${location.stateFullName}. Fast response, upfront pricing, and quality service.`}
         backgroundImage="/location_page_optimized.webp"
+        phone={phone}
+        phoneRaw={phoneRaw}
       />
 
       <section className="py-12">
