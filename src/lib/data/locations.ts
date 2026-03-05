@@ -829,6 +829,48 @@ export const LOCATIONS: Location[] = [
     },
     googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.2339352517406!2d-117.20083689999998!3d32.83905719999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc0100462c0531%3A0xcbe7d45380bbe6fd!2sAir%20Conditioning%20Champ!5e0!3m2!1sen!2sus!4v1772675637715!5m2!1sen!2sus',
   },
+  // === CALIFORNIA - EAST BAY / RICHMOND ===
+  {
+    slug: 'richmond-ca',
+    city: 'Richmond',
+    state: 'CA',
+    stateFullName: 'California',
+    zipCodes: ['94801', '94802', '94803', '94804', '94805', '94806', '94807', '94808', '94820', '94850'],
+    population: 116448,
+    neighborhoods: ['Point Richmond', 'Marina Bay', 'Iron Triangle', 'Atchison Village', 'Hilltop', 'El Sobrante', 'San Pablo', 'Pinole', 'Hercules', 'Parchester Village', 'North Richmond', 'East Richmond Heights', 'Annex', 'Santa Fe', 'Coronado'],
+    landmarks: ['Point Richmond Historic District', 'Rosie the Riveter WWII Home Front National Historical Park', 'Richmond Marina', 'Craneway Pavilion', 'Miller/Knox Regional Shoreline', 'Point Isabel Regional Shoreline', 'Richmond-San Rafael Bridge', 'SS Red Oak Victory', 'Richmond BART Station'],
+    majorRoads: ['I-80', 'I-580', 'CA-123', 'San Pablo Avenue', 'Macdonald Avenue', 'Cutting Boulevard', 'Harbour Way', '23rd Street', 'Barrett Avenue', 'Richmond Parkway'],
+    nearbyLocations: ['san-francisco-ca', 'san-jose-ca'],
+    climateNotes: `Richmond enjoys a mild Mediterranean climate moderated by San Francisco Bay. Summer temperatures typically range from 60-75°F, cooler than inland East Bay cities due to bay breezes and occasional fog. However, areas further from the water like Hilltop and El Sobrante can be 10-15°F warmer. The mild climate means less AC demand than inland areas, but heat waves and poor air quality days (especially during wildfire season) make AC increasingly important for comfort and health.`,
+    localInfo: `Richmond is a diverse East Bay city with rich industrial history, including its pivotal role in WWII shipbuilding commemorated at Rosie the Riveter National Historical Park. The city features distinct neighborhoods from the charming Point Richmond waterfront to the developing Marina Bay area. Richmond has seen significant revitalization while maintaining affordability compared to neighboring cities. The city is well-connected via BART and I-80 to San Francisco and the greater Bay Area.`,
+    serviceNotes: `Richmond's bayfront location creates varied AC needs—waterfront areas stay cool while inland neighborhoods need more cooling. We serve all Richmond neighborhoods from Point Richmond to Hilltop, as well as nearby communities like El Sobrante, San Pablo, and Pinole. Our East Bay presence enables fast response throughout Richmond and Contra Costa County.`,
+    faqs: [
+      { question: 'How much does AC repair cost in Richmond?', answer: 'AC repair in Richmond typically costs $89-$500 for common repairs like capacitor replacement, refrigerant recharge, or thermostat issues. Major repairs like compressor replacement range from $1,500-$3,500. Our diagnostic fee is $89 and is applied toward the repair cost.' },
+      { question: 'Do Richmond homes need AC with the bay breeze?', answer: 'While waterfront Richmond stays cool, inland areas like Hilltop, El Sobrante, and East Richmond Heights can get significantly warmer. AC is also increasingly important during heat waves and for air filtration during wildfire smoke events that affect the Bay Area.' },
+      { question: 'How quickly can you respond to AC emergencies in Richmond?', answer: 'We typically respond to AC emergencies in Richmond within 1-2 hours. Our East Bay coverage enables rapid response throughout Richmond and surrounding Contra Costa County communities.' },
+      { question: 'Do you service all Richmond neighborhoods?', answer: 'Yes, we service all Richmond neighborhoods including Point Richmond, Marina Bay, Hilltop, Iron Triangle, Atchison Village, and the surrounding areas of El Sobrante, San Pablo, Pinole, and Hercules.' },
+      { question: 'What AC brands do you service in Richmond?', answer: 'We service all major AC brands in Richmond including Carrier, Trane, Lennox, Rheem, Goodman, Daikin, Mitsubishi (mini-splits), and more. Many older Richmond homes benefit from ductless mini-split systems.' },
+      { question: 'Do you offer maintenance plans in Richmond?', answer: 'Yes, we offer annual maintenance plans for Richmond homeowners that include seasonal tune-ups, priority scheduling, and repair discounts. Regular maintenance ensures your system is ready for heat waves and provides clean air during smoke events.' },
+    ],
+    metaTitle: 'Richmond CA AC Repair & HVAC Service | 24/7 Emergency | Air Conditioning Champ',
+    metaDescription: 'Expert AC repair in Richmond, CA. Serving Point Richmond, Marina Bay, Hilltop & all East Bay neighborhoods. 24/7 emergency service, all brands. Call (510) 397-4502!',
+    keyTakeaways: [
+      'Same-day AC repair throughout Richmond and the East Bay',
+      'Understanding Richmond\'s microclimates—cool bayfront to warmer inland hills',
+      'Serving all neighborhoods including Point Richmond, Hilltop, and Marina Bay',
+      '24/7 emergency service with 1-2 hour response times',
+    ],
+    hasGBP: true,
+    phone: '(510) 397-4502',
+    phoneRaw: '+15103974502',
+    address: {
+      street: '449 S 24th St',
+      city: 'Richmond',
+      state: 'CA',
+      zip: '94804',
+    },
+    googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4663.435234546477!2d-122.3469767!3d37.9256622!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808579004d6db579%3A0x2620002ba1da8a03!2sAir%20Conditioning%20Champ!5e1!3m2!1sen!2sus!4v1772677839584!5m2!1sen!2sus',
+  },
 ];
 
 export function getLocationBySlug(slug: string): Location | undefined {

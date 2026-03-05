@@ -853,31 +853,37 @@
                 <div class="service-icon">🔧</div>
                 <h3>AC Repair</h3>
                 <p>Fast, reliable air conditioning repair services. We diagnose and fix all AC issues to restore your comfort quickly.</p>
+                <a href="tel:+16197359311" class="btn btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Call Now</a>
             </div>
             <div class="service-card">
                 <div class="service-icon">⚙️</div>
                 <h3>AC Installation</h3>
                 <p>Professional new AC installation and replacement. We help you choose the right system for your home and budget.</p>
+                <a href="tel:+16197359311" class="btn btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Call Now</a>
             </div>
             <div class="service-card">
                 <div class="service-icon">🛡️</div>
                 <h3>AC Maintenance</h3>
                 <p>Preventive maintenance plans to keep your AC running efficiently and extend the life of your system.</p>
+                <a href="tel:+16197359311" class="btn btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Call Now</a>
             </div>
             <div class="service-card">
                 <div class="service-icon">🔥</div>
                 <h3>Heating Repair</h3>
                 <p>Expert furnace and heating system repair services to keep your home warm during San Diego's cooler months.</p>
+                <a href="tel:+16197359311" class="btn btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Call Now</a>
             </div>
             <div class="service-card">
                 <div class="service-icon">🌡️</div>
                 <h3>Ductwork</h3>
                 <p>Professional duct installation, repair, and cleaning to ensure proper airflow throughout your home.</p>
+                <a href="tel:+16197359311" class="btn btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Call Now</a>
             </div>
             <div class="service-card">
                 <div class="service-icon">🚨</div>
                 <h3>Emergency Service</h3>
                 <p>24/7 emergency HVAC services when you need us most. Same-day service available for urgent repairs.</p>
+                <a href="tel:+16197359311" class="btn btn-accent" style="margin-top: 1rem; width: 100%; justify-content: center;">Call Emergency</a>
             </div>
         </div>
     </section>
@@ -1116,30 +1122,7 @@
     </footer>
 
     <script>
-        // Lead attribution tracking
-        document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            
-            document.getElementById('formSource').value = window.location.href;
-            document.getElementById('formReferrer').value = document.referrer || 'direct';
-            document.getElementById('utmSource').value = urlParams.get('utm_source') || '';
-            document.getElementById('utmMedium').value = urlParams.get('utm_medium') || '';
-            document.getElementById('utmCampaign').value = urlParams.get('utm_campaign') || '';
-        });
-
-        // Form submission
-        document.getElementById('leadForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-            
-            // In production, send to your lead API
-            console.log('Lead submitted:', data);
-            
-            alert('Thank you! Your quote request has been submitted. We will contact you within 24 hours.');
-            this.reset();
-        });
+        // No form submission - this is a call-only page
     </script>
 
     <!-- JSON-LD Structured Data -->
