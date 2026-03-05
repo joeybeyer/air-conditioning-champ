@@ -745,6 +745,48 @@ export const LOCATIONS: Location[] = [
     },
     googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3300.3497911261993!2d-118.38904740000001!3d34.188538099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c29500281c4b85%3A0xd1defc0dc6e073f4!2sAir%20Conditioning%20Champ!5e0!3m2!1sen!2sus!4v1771984554958!5m2!1sen!2sus',
   },
+  // === CALIFORNIA - SANTA CLARA COUNTY ===
+  {
+    slug: 'san-jose-ca',
+    city: 'San Jose',
+    state: 'CA',
+    stateFullName: 'California',
+    zipCodes: ['95110', '95111', '95112', '95113', '95116', '95117', '95118', '95119', '95120', '95121', '95122', '95123', '95124', '95125', '95126', '95127', '95128', '95129', '95130', '95131', '95132', '95133', '95134', '95135', '95136', '95138', '95139', '95140', '95148'],
+    population: 1013240,
+    neighborhoods: ['Willow Glen', 'Almaden Valley', 'Rose Garden', 'Cambrian Park', 'Evergreen', 'Berryessa', 'Silver Creek', 'Santa Teresa', 'Blossom Valley', 'Communications Hill', 'Downtown San Jose', 'Japantown', 'North San Jose', 'West San Jose', 'East San Jose', 'Coyote Valley'],
+    landmarks: ['SAP Center', 'San Jose State University', 'The Tech Interactive', 'Santana Row', 'San Jose Municipal Rose Garden', 'Winchester Mystery House', 'Happy Hollow Park & Zoo', 'Guadalupe River Park', 'Plaza de César Chávez'],
+    majorRoads: ['I-280', 'I-680', 'US-101', 'CA-87', 'CA-85', 'CA-17', 'Lawrence Expressway', 'San Tomas Expressway', 'Almaden Expressway', 'Capitol Expressway'],
+    nearbyLocations: ['santee-ca', 'san-francisco-ca'],
+    climateNotes: `San Jose enjoys a Mediterranean climate with warm, dry summers and mild, wet winters. Summer temperatures typically range from 70-90°F, though heat waves can push temperatures above 100°F. Unlike foggy San Francisco just 50 miles north, San Jose sits in the South Bay where sunshine dominates. The inland valley location means AC is essential from May through October. Temperature swings of 20-30°F between day and night are common, which can stress HVAC systems.`,
+    localInfo: `San Jose is the heart of Silicon Valley and California's third-largest city. The tech industry drives the local economy, with major employers including Apple, Google, Cisco, and Adobe nearby. Housing ranges from historic Victorians in downtown neighborhoods like Naglee Park to modern developments in North San Jose. The city's diversity is reflected in neighborhoods like Japantown and the Vietnamese community along Story Road. San Jose offers a lower cost of living than San Francisco while maintaining excellent weather and urban amenities.`,
+    serviceNotes: `San Jose's size and diverse housing stock require technicians experienced with everything from 1950s ranch homes to modern smart-home integrated HVAC systems. We serve all San Jose neighborhoods from the affluent Almaden Valley to the growing North San Jose tech corridor. Our College Drive location provides fast response throughout Santa Clara County. Many San Jose homeowners work from home in the tech industry and require reliable cooling for home offices.`,
+    faqs: [
+      { question: 'How much does AC repair cost in San Jose?', answer: 'AC repair in San Jose typically costs $89-$500 for common repairs like capacitor replacement, refrigerant recharge, or thermostat issues. Major repairs like compressor replacement range from $1,500-$3,500. Our diagnostic fee is $89 and is applied toward the repair cost.' },
+      { question: 'Why is San Jose hotter than San Francisco?', answer: 'San Jose is located in the South Bay, approximately 50 miles from the coast and shielded from the Pacific fog that keeps San Francisco cool. This inland valley position means San Jose regularly sees temperatures 15-20°F warmer than SF, making AC essential rather than optional.' },
+      { question: 'How quickly can you respond to AC emergencies in San Jose?', answer: 'We typically respond to AC emergencies in San Jose within 1-2 hours. Our College Drive location in central San Jose enables rapid response throughout the city and Santa Clara County.' },
+      { question: 'Do you service all San Jose neighborhoods?', answer: 'Yes, we service all San Jose neighborhoods including Willow Glen, Almaden Valley, Rose Garden, Cambrian Park, Evergreen, Berryessa, Downtown, North San Jose, and all surrounding areas.' },
+      { question: 'What AC brands do you service in San Jose?', answer: 'We service all major AC brands in San Jose including Carrier, Trane, Lennox, Rheem, Goodman, Daikin, Mitsubishi (mini-splits), and more. Our technicians are trained on both traditional systems and modern smart HVAC.' },
+      { question: 'Do you offer maintenance plans in San Jose?', answer: 'Yes, we offer annual maintenance plans for San Jose homeowners that include seasonal tune-ups, priority scheduling, and repair discounts. Regular maintenance is especially important given San Jose\'s warm climate.' },
+    ],
+    metaTitle: 'San Jose CA AC Repair & HVAC Service | 24/7 Emergency | Air Conditioning Champ',
+    metaDescription: 'Expert AC repair in San Jose, CA. Silicon Valley\'s trusted HVAC service. 24/7 emergency repair, all brands, upfront pricing. Call (669) 304-3070!',
+    keyTakeaways: [
+      'Same-day AC repair throughout San Jose and Santa Clara County',
+      'Experienced with Silicon Valley homes from historic Willow Glen to modern North San Jose',
+      'Serving all neighborhoods including Almaden Valley, Rose Garden, Evergreen, and Downtown',
+      '24/7 emergency service with 1-2 hour response times',
+    ],
+    hasGBP: true,
+    phone: '(669) 304-3070',
+    phoneRaw: '+16693043070',
+    address: {
+      street: '700 College Dr',
+      city: 'San Jose',
+      state: 'CA',
+      zip: '95128',
+    },
+    googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.324091500123!2d-121.9191105!3d37.3141964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcb0004fbd72f%3A0xcf0b81e941af3c6a!2sAir%20Conditioning%20Champ!5e0!3m2!1sen!2sus!4v1771971534262!5m2!1sen!2sus',
+  },
 ];
 
 export function getLocationBySlug(slug: string): Location | undefined {
