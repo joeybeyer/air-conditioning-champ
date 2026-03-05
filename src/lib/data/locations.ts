@@ -785,7 +785,7 @@ export const LOCATIONS: Location[] = [
       state: 'CA',
       zip: '95128',
     },
-    googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.324091500123!2d-121.9191105!3d37.3141964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcb0004fbd72f%3A0xcf0b81e941af3c6a!2sAir%20Conditioning%20Champ!5e0!3m2!1sen!2sus!4v1771971534262!5m2!1sen!2sus',
+    googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4701.948549425959!2d-121.91911049999997!3d37.31419639999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcb0004fbd72f%3A0xcf0b81e941af3c6a!2sAir%20Conditioning%20Champ!5e1!3m2!1sen!2sus!4v1772672636763!5m2!1sen!2sus',
   },
 ];
 
