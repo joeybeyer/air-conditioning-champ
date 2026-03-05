@@ -787,6 +787,48 @@ export const LOCATIONS: Location[] = [
     },
     googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4701.948549425959!2d-121.91911049999997!3d37.31419639999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcb0004fbd72f%3A0xcf0b81e941af3c6a!2sAir%20Conditioning%20Champ!5e1!3m2!1sen!2sus!4v1772672636763!5m2!1sen!2sus',
   },
+  // === CALIFORNIA - SAN DIEGO ===
+  {
+    slug: 'san-diego-ca',
+    city: 'San Diego',
+    state: 'CA',
+    stateFullName: 'California',
+    zipCodes: ['92117', '92109', '92110', '92111', '92037', '92107', '92106', '92122', '92123', '92126', '92124', '92108', '92103', '92104', '92116', '92101', '92102', '92113', '92114', '92115', '92119', '92120', '92105'],
+    population: 1386932,
+    neighborhoods: ['Clairemont Mesa', 'Bay Park', 'Pacific Beach', 'La Jolla', 'Ocean Beach', 'Point Loma', 'Mission Beach', 'Mission Bay', 'University City', 'Kearny Mesa', 'Linda Vista', 'Morena', 'Serra Mesa', 'Mira Mesa', 'Tierrasanta', 'Hillcrest', 'North Park', 'Normal Heights', 'Downtown San Diego', 'Mission Hills', 'Bankers Hill'],
+    landmarks: ['Balboa Park', 'San Diego Zoo', 'La Jolla Cove', 'Mission Bay', 'SeaWorld San Diego', 'USS Midway Museum', 'Gaslamp Quarter', 'UCSD', 'Torrey Pines', 'Petco Park', 'Old Town San Diego', 'Coronado Bridge'],
+    majorRoads: ['I-5', 'I-8', 'I-805', 'CA-52', 'CA-163', 'CA-56', 'Balboa Avenue', 'Clairemont Drive', 'Genesee Avenue', 'Garnet Avenue', 'Mission Bay Drive', 'Friars Road'],
+    nearbyLocations: ['santee-ca', 'el-cajon-ca', 'poway-ca', 'carlsbad-ca'],
+    climateNotes: `San Diego enjoys one of the most desirable climates in the United States—a mild Mediterranean climate with average temperatures of 65-75°F year-round. Coastal areas benefit from the marine layer and ocean breezes, keeping summers comfortable. However, inland neighborhoods like Clairemont, Kearny Mesa, and Tierrasanta experience warmer temperatures, often 10-15°F hotter than the coast, especially during summer and Santa Ana wind events. AC is essential for inland San Diego from May through October and during heat waves that can push temperatures into the 90s-100s.`,
+    localInfo: `San Diego is California's second-largest city and one of the most desirable places to live in the United States. Known for its beaches, perfect weather, and diverse neighborhoods, San Diego offers everything from the bustling Gaslamp Quarter downtown to laid-back beach communities like Pacific Beach and Ocean Beach. The city has a strong military presence (Naval Base San Diego, Marine Corps bases) and growing biotech and tech industries. Housing ranges from historic craftsman homes in North Park to modern condos downtown and family homes throughout the suburbs.`,
+    serviceNotes: `San Diego's diverse microclimates mean different AC needs throughout the city. Coastal communities like La Jolla and Pacific Beach may only need AC during heat waves, while inland areas like Clairemont, Kearny Mesa, and Mira Mesa require reliable cooling throughout summer. We serve all of San Diego from our Clairemont location, providing fast response to both coastal and inland neighborhoods. Our technicians understand the unique needs of San Diego homes from older craftsmans with no ductwork to modern homes with smart HVAC systems.`,
+    faqs: [
+      { question: 'How much does AC repair cost in San Diego?', answer: 'AC repair in San Diego typically costs $89-$500 for common repairs like capacitor replacement, refrigerant recharge, or thermostat issues. Major repairs like compressor replacement range from $1,500-$3,500. Our diagnostic fee is $89 and is applied toward the repair cost.' },
+      { question: 'Do I really need AC in San Diego?', answer: 'It depends on your neighborhood. Coastal areas like La Jolla, Pacific Beach, and Point Loma enjoy mild temperatures year-round. However, inland areas like Clairemont, Kearny Mesa, Mira Mesa, and Tierrasanta regularly hit 85-95°F in summer and need reliable AC. Even coastal homes benefit from AC during Santa Ana wind events when temperatures spike.' },
+      { question: 'How quickly can you respond to AC emergencies in San Diego?', answer: 'We typically respond to AC emergencies in San Diego within 1-2 hours. Our Clairemont location enables rapid response throughout San Diego, from La Jolla to downtown to Mira Mesa.' },
+      { question: 'Do you service all San Diego neighborhoods?', answer: 'Yes, we service all San Diego neighborhoods including Clairemont, Pacific Beach, La Jolla, Point Loma, Ocean Beach, Mission Bay, University City, Kearny Mesa, Mira Mesa, Tierrasanta, North Park, Hillcrest, Downtown, and everywhere in between.' },
+      { question: 'What AC brands do you service in San Diego?', answer: 'We service all major AC brands in San Diego including Carrier, Trane, Lennox, Rheem, Goodman, Daikin, Mitsubishi (mini-splits), and more. Our technicians are trained on both traditional systems and ductless mini-splits common in older San Diego homes.' },
+      { question: 'Do you offer maintenance plans in San Diego?', answer: 'Yes, we offer annual maintenance plans for San Diego homeowners that include seasonal tune-ups, priority scheduling, and repair discounts. Even in San Diego\'s mild climate, regular maintenance prevents breakdowns during heat waves.' },
+    ],
+    metaTitle: 'San Diego CA AC Repair & HVAC Service | 24/7 Emergency | Air Conditioning Champ',
+    metaDescription: 'Expert AC repair in San Diego, CA. Serving Clairemont, La Jolla, Pacific Beach & all neighborhoods. 24/7 emergency service, all brands, upfront pricing. Call (619) 735-9311!',
+    keyTakeaways: [
+      'Same-day AC repair throughout San Diego from La Jolla to downtown',
+      'Understanding San Diego\'s microclimates—coastal cool to inland heat',
+      'Serving all neighborhoods including Clairemont, Pacific Beach, Kearny Mesa, and Mira Mesa',
+      '24/7 emergency service with 1-2 hour response times',
+    ],
+    hasGBP: true,
+    phone: '(619) 735-9311',
+    phoneRaw: '+16197359311',
+    address: {
+      street: '5174 Dubois Dr',
+      city: 'San Diego',
+      state: 'CA',
+      zip: '92117',
+    },
+    googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.2339352517406!2d-117.20083689999998!3d32.83905719999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc0100462c0531%3A0xcbe7d45380bbe6fd!2sAir%20Conditioning%20Champ!5e0!3m2!1sen!2sus!4v1772675637715!5m2!1sen!2sus',
+  },
 ];
 
 export function getLocationBySlug(slug: string): Location | undefined {
