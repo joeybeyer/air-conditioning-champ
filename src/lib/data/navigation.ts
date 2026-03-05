@@ -32,12 +32,6 @@ export const mainNavigation: NavItem[] = [
   {
     label: 'Service Areas',
     href: '/locations',
-    children: Object.entries(locationsByState).flatMap(([state, locations]) =>
-      locations.map((location) => ({
-        label: `${location.city}, ${location.state}`,
-        href: `/locations/${location.slug}`,
-      }))
-    ),
   },
   {
     label: 'About',
