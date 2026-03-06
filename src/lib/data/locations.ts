@@ -871,6 +871,48 @@ export const LOCATIONS: Location[] = [
     },
     googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4663.435234546477!2d-122.3469767!3d37.9256622!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808579004d6db579%3A0x2620002ba1da8a03!2sAir%20Conditioning%20Champ!5e1!3m2!1sen!2sus!4v1772677839584!5m2!1sen!2sus',
   },
+  // === CALIFORNIA - LOS ANGELES / WEST HOLLYWOOD ===
+  {
+    slug: 'los-angeles-west-hollywood-ca',
+    city: 'Los Angeles & West Hollywood',
+    state: 'CA',
+    stateFullName: 'California',
+    zipCodes: ['90069', '90046', '90048', '90036', '90019', '90028', '90038', '90068', '90210', '90211', '90212', '90232', '90402', '90403', '90404'],
+    population: 4000000,
+    neighborhoods: ['West Hollywood', 'Hollywood Hills', 'Hollywood', 'Beverly Grove', 'Melrose', 'Beverly Hills', 'Century City', 'Culver City', 'Mid-Wilshire', 'Miracle Mile', 'Larchmont Village', 'Sunset Strip', 'Santa Monica', 'Venice', 'Brentwood', 'Pacific Palisades'],
+    landmarks: ['Hollywood Walk of Fame', 'Sunset Strip', 'Hollywood Bowl', 'The Grove', 'Melrose Trading Post', 'Cedars-Sinai Medical Center', 'Beverly Center', 'Hollywood Sign', 'Runyon Canyon', 'Santa Monica Pier', 'Venice Beach Boardwalk'],
+    majorRoads: ['Sunset Blvd', 'Hollywood Blvd', 'Melrose Ave', 'Santa Monica Blvd', 'La Cienega Blvd', 'Fairfax Ave', 'Highland Ave', 'Vine St', 'La Brea Ave', 'Wilshire Blvd', 'Olympic Blvd', 'Pico Blvd'],
+    nearbyLocations: ['beverly-hills-ca', 'hollywood-ca', 'santa-monica-ca', 'culver-city-ca', 'north-hollywood-ca'],
+    climateNotes: `Los Angeles enjoys a Mediterranean climate with warm, dry summers and mild, wet winters. Summer temperatures often reach 85-100°F in inland areas, while coastal breezes provide relief near the beach. The famous LA smog can trap heat, making air conditioning essential during heat waves. West Hollywood and Hollywood Hills have microclimates due to elevation changes. With LA's year-round mild weather, HVAC systems run consistently, making preventive maintenance crucial for system longevity.`,
+    localInfo: `Los Angeles is the entertainment capital of the world and California's largest city. West Hollywood (WeHo) is known for its vibrant nightlife, fashion scene, and LGBTQ+ community. The Hollywood Hills are home to celebrities, stunning views, and iconic landmarks like the Hollywood Sign. The area features a mix of luxury mansions, mid-century modern homes, and contemporary apartments. From the glitz of Beverly Hills to the artistic vibe of Melrose, LA offers diverse experiences.`,
+    serviceNotes: `Los Angeles and West Hollywood are key service areas for Air Conditioning Champ. We serve all neighborhoods from Beverly Hills to Hollywood, Santa Monica to Century City. Our team understands the specific HVAC needs of luxury homes, modern apartments, and commercial properties in these prestigious areas.`,
+    faqs: [
+      { question: 'How quickly can you respond to AC emergencies in Los Angeles?', answer: 'We typically respond to AC emergencies in Los Angeles and West Hollywood within 1-2 hours. Our LA team is strategically positioned throughout the area to ensure fast service 24/7.' },
+      { question: 'Do you service luxury homes in Beverly Hills and Hollywood Hills?', answer: 'Yes, we specialize in servicing luxury homes, mansions, and high-end properties throughout Beverly Hills, Hollywood Hills, and West Hollywood. Our technicians are experienced with premium HVAC systems.' },
+      { question: 'What AC brands do you service in Los Angeles?', answer: 'We service all major AC brands in Los Angeles including Carrier, Trane, Lennox, Rheem, Goodman, Daikin, Mitsubishi (mini-splits), and many premium brands common in luxury LA homes.' },
+      { question: 'How much does AC repair cost in Los Angeles?', answer: 'AC repair in Los Angeles typically costs $89-$600 depending on the issue. We provide upfront pricing before starting any work.' },
+      { question: 'Do you offer AC maintenance plans in LA?', answer: 'Yes, we offer comprehensive maintenance plans for LA homeowners that include bi-annual tune-ups, priority scheduling, and discounts on repairs.' },
+      { question: 'Can you install a new AC system in a modern LA home?', answer: 'Absolutely. We install new AC systems throughout Los Angeles, including traditional split systems, ductless mini-splits, and smart HVAC systems for modern homes.' },
+    ],
+    metaTitle: 'Los Angeles & West Hollywood AC Repair & HVAC Service | 24/7 Emergency | Air Conditioning Champ',
+    metaDescription: 'Expert AC repair in Los Angeles and West Hollywood, CA. Serving Hollywood, Beverly Hills, Santa Monica & all LA neighborhoods. 24/7 emergency service. Call (424) 497-6337!',
+    keyTakeaways: [
+      'Same-day AC repair throughout Los Angeles and West Hollywood',
+      'Serving luxury homes in Beverly Hills, Hollywood Hills, and West Hollywood',
+      'Expert HVAC services for modern apartments and commercial properties',
+      '24/7 emergency service with 1-2 hour response times',
+    ],
+    hasGBP: true,
+    phone: '(424) 497-6337',
+    phoneRaw: '+14244976337',
+    address: {
+      street: '8262 Marmont Ln',
+      city: 'Los Angeles',
+      state: 'CA',
+      zip: '90069',
+    },
+    googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4899.9057664447055!2d-118.37000359999999!3d34.0980276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bf0032fba69d%3A0x27d124e6a0899c7c!2sAir%20Conditioning%20Champ!5e1!3m2!1sen!2sus!4v1772793700353!5m2!1sen!2sus',
+  },
 ];
 
 export function getLocationBySlug(slug: string): Location | undefined {

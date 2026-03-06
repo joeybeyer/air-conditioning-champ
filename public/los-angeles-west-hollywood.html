@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Conditioning Champ | Expert HVAC Services in Los Angeles & West Hollywood, CA</title>
+    <meta name="description" content="Expert AC repair, installation, and maintenance in Los Angeles and West Hollywood, California. Fast response, upfront pricing, and quality service.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #dbeafe;
+            --secondary: #0891b2;
+            --accent: #ea580c;
+            --text-dark: #1e293b;
+            --text-gray: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --success: #10b981;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1.6; background: var(--bg-light); }
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        /* Breadcrumb */
+        .breadcrumb { background: var(--white); padding: 1rem 2rem; border-bottom: 1px solid #e2e8f0; }
+        .breadcrumb-inner { max-width: 1100px; margin: 0 auto; font-size: 0.9rem; color: var(--text-gray); }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%); padding: 3rem 2rem; color: white; text-align: center; }
+        .hero h1 { font-size: 2.25rem; font-weight: 800; margin-bottom: 1rem; }
+        .hero p { font-size: 1.125rem; opacity: 0.95; max-width: 700px; margin: 0 auto 1.5rem; }
+        .hero-cta { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.875rem 1.75rem; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+        .btn-primary { background: white; color: var(--primary); }
+        .btn-primary:hover { background: var(--primary-light); text-decoration: none; }
+        .btn-secondary { background: var(--accent); color: white; }
+        .btn-secondary:hover { background: #c2410c; text-decoration: none; }
+        
+        /* Trust bar */
+        .trust-bar { background: var(--white); padding: 1rem 2rem; border-bottom: 1px solid #e2e8f0; }
+        .trust-bar-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; font-size: 0.875rem; }
+        .trust-item { display: flex; align-items: center; gap: 0.5rem; color: var(--text-gray); }
+        .trust-item span { color: var(--success); font-weight: 600; }
+        
+        /* Main content */
+        .content { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        
+        .key-takeaways { background: var(--primary-light); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; border-left: 4px solid var(--primary); }
+        .key-takeaways h2 { font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary); }
+        .key-takeaways ul { padding-left: 1.25rem; }
+        .key-takeaways li { margin-bottom: 0.5rem; color: var(--text-dark); }
+        
+        .intro { font-size: 1.1rem; margin-bottom: 2rem; }
+        .intro a { color: var(--primary); }
+        
+        h2 { font-size: 1.75rem; font-weight: 700; margin: 2rem 0 1rem; color: var(--text-dark); }
+        p { margin-bottom: 1rem; color: var(--text-gray); }
+        
+        /* Neighborhoods */
+        .neighborhoods-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.5rem; margin: 1rem 0; }
+        .neighborhood { background: var(--white); padding: 0.5rem 0.75rem; border-radius: 6px; border: 1px solid #e2e8f0; text-align: center; font-size: 0.9rem; }
+        
+        /* Info boxes */
+        .info-section { margin: 1.5rem 0; }
+        .info-section h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark); }
+        .info-section p, .info-section div { color: var(--text-gray); }
+        
+        .zip-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+        .zip-tag { background: var(--primary-light); color: var(--primary); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; }
+        
+        /* Map Section */
+        .map-section { margin: 2rem 0; }
+        .map-section h2 { margin-bottom: 1rem; }
+        .map-container { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        
+        /* NAP Box */
+        .nap-box { background: var(--white); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; border: 1px solid #e2e8f0; }
+        .nap-box h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-dark); }
+        .nap-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; }
+        .nap-icon { color: var(--primary); font-weight: 700; min-width: 80px; }
+        .nap-item a { color: var(--text-gray); }
+        
+        /* CTA Section */
+        .cta-section { background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%); padding: 3rem 2rem; text-align: center; color: white; border-radius: 12px; margin: 2rem 0; }
+        .cta-section h2 { color: white; font-size: 2rem; margin-bottom: 1rem; }
+        .cta-section p { color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 1.5rem; }
+        
+        /* Nearby */
+        .nearby-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin: 1rem 0; }
+        .nearby-item { background: var(--white); padding: 0.75rem; border-radius: 6px; border: 1px solid #e2e8f0; }
+        .nearby-item a { font-weight: 500; }
+        
+        /* Footer */
+        .footer { background: #0f172a; color: white; padding: 2rem; margin-top: 3rem; }
+        .footer-inner { max-width: 1100px; margin: 0 auto; }
+        .footer h3 { font-size: 1.25rem; margin-bottom: 1rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+        .footer-loc { margin-bottom: 0.75rem; }
+        .footer-loc a { color: white; font-weight: 600; display: block; }
+        .footer-loc span { display: block; font-size: 0.85rem; opacity: 0.7; }
+        .footer-loc .phone { color: var(--primary-light); }
+        .footer-bottom { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; opacity: 0.5; font-size: 0.875rem; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.75rem; }
+            .trust-bar-inner { flex-direction: column; align-items: center; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-inner">
+            <a href="/">Home</a> > <a href="/locations">Service Areas</a> > Los Angeles & West Hollywood
+        </div>
+    </div>
+    
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Expert AC Repair, Installation, and Maintenance in Los Angeles & West Hollywood, California</h1>
+        <p>Fast response, upfront pricing, and quality service.</p>
+        <div class="hero-cta">
+            <a href="tel:+14244976337" class="btn btn-secondary">Call (424) 497-6337</a>
+            <a href="/contact" class="btn btn-primary">Schedule Service</a>
+        </div>
+    </section>
+    
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <div class="trust-bar-inner">
+            <div class="trust-item"><span>✓</span> Licensed, Bonded & Insured</div>
+            <div class="trust-item"><span>✓</span> 500+ 5-Star Reviews</div>
+            <div class="trust-item"><span>✓</span> 1-2 hours Response</div>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Key Takeaways -->
+        <div class="key-takeaways">
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li>Same-day AC repair throughout Los Angeles and West Hollywood from Beverly Hills to Hollywood</li>
+                <li>Serving the famous neighborhoods: West Hollywood, Hollywood Hills, Beverly Grove, Melrose, and more</li>
+                <li>Expert HVAC services for luxury homes and commercial properties</li>
+                <li>24/7 emergency service with 1-2 hour response times</li>
+            </ul>
+        </div>
+        
+        <!-- Intro -->
+        <p class="intro">
+            <a href="/">Air Conditioning Champ</a> is proud to serve Los Angeles and West Hollywood, California with comprehensive HVAC services. As a trusted <a href="/">local HVAC contractor</a>, we provide fast, reliable service to all LA neighborhoods including West Hollywood, Hollywood Hills, Beverly Grove, Melrose, and surrounding areas. Our licensed technicians offer 24/7 <a href="/services/emergency-service">emergency service</a> with typical response times of just 1-2 hours.
+        </p>
+        
+        <!-- HVAC Services -->
+        <h2>HVAC Services in Los Angeles & West Hollywood</h2>
+        <p>
+            We offer complete heating and cooling services for Los Angeles homes and businesses. Whether you need emergency <a href="/services/ac-repair">AC repair</a>, a new <a href="/services/ac-installation">AC installation</a>, or routine <a href="/services/ac-maintenance">maintenance</a>, our team is ready to help. We specialize in serving luxury properties, modern apartments, and commercial spaces throughout the LA area.
+        </p>
+        
+        <!-- Climate -->
+        <p>
+            Los Angeles enjoys a Mediterranean climate with warm, dry summers and mild, wet winters. Summer temperatures often reach 85-100°F in inland areas, while coastal breezes provide some relief near the beach. The famous LA smog can trap heat, making air conditioning essential during heat waves. In West Hollywood and Hollywood Hills, elevations can create microclimates with temperature variations. With LA's year-round mild weather, HVAC systems run consistently, making preventive maintenance crucial for system longevity.
+        </p>
+        
+        <!-- City Description -->
+        <p>
+            Los Angeles is the entertainment capital of the world and California's largest city, spanning over 500 square miles. From the glitz and glamour of Hollywood to the trendy shops and restaurants of West Hollywood, LA offers diverse experiences. West Hollywood (WeHo) is known for its vibrant nightlife, fashion scene, and LGBTQ+ community. The Hollywood Hills are home to celebrities, stunning views, and iconic landmarks like the Hollywood Sign. The area features a mix of luxury mansions, mid-century modern homes, and contemporary apartments.
+        </p>
+        
+        <!-- Neighborhoods -->
+        <h2>Los Angeles Neighborhoods We Serve</h2>
+        <div class="neighborhoods-grid">
+            <div class="neighborhood">West Hollywood</div>
+            <div class="neighborhood">Hollywood Hills</div>
+            <div class="neighborhood">Hollywood</div>
+            <div class="neighborhood">Beverly Grove</div>
+            <div class="neighborhood">Melrose</div>
+            <div class="neighborhood">Beverly Hills</div>
+            <div class="neighborhood">Century City</div>
+            <div class="neighborhood">Culver City</div>
+            <div class="neighborhood">Mid-Wilshire</div>
+            <div class="neighborhood">Miracle Mile</div>
+            <div class="neighborhood">Larchmont Village</div>
+            <div class="neighborhood">Hollywood Forever</div>
+            <div class="neighborhood">Sunset Strip</div>
+            <div class="neighborhood">Santa Monica</div>
+            <div class="neighborhood">Venice</div>
+        </div>
+        
+        <!-- ZIP Codes -->
+        <div class="info-section">
+            <h3>ZIP Codes</h3>
+            <div class="zip-grid">
+                <span class="zip-tag">90069</span>
+                <span class="zip-tag">90046</span>
+                <span class="zip-tag">90048</span>
+                <span class="zip-tag">90036</span>
+                <span class="zip-tag">90019</span>
+                <span class="zip-tag">90028</span>
+                <span class="zip-tag">90038</span>
+                <span class="zip-tag">90068</span>
+                <span class="zip-tag">90210</span>
+                <span class="zip-tag">90212</span>
+                <span class="zip-tag">90211</span>
+                <span class="zip-tag">90232</span>
+                <span class="zip-tag">90402</span>
+                <span class="zip-tag">90403</span>
+                <span class="zip-tag">90404</span>
+            </div>
+        </div>
+        
+        <!-- Major Roads -->
+        <div class="info-section">
+            <h3>Major Roads</h3>
+            <p>Sunset Blvd • Hollywood Blvd • Melrose Ave • Santa Monica Blvd • La Cienega Blvd • Fairfax Ave • Highland Ave • Vine St • La Brea Ave • Wilcox Ave</p>
+        </div>
+        
+        <!-- Map Section -->
+        <div class="map-section">
+            <h2>Our Los Angeles Location</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4899.9057664447055!2d-118.37000359999999!3d34.0980276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bf0032fba69d%3A0x27d124e6a0899c7c!2sAir%20Conditioning%20Champ!5e1!3m2!1sen!2sus!4v1772793700353!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        
+        <!-- NAP Box -->
+        <div class="nap-box">
+            <h3>Air Conditioning Champ - Los Angeles</h3>
+            <div class="nap-item">
+                <span class="nap-icon">Address:</span>
+                <span>8262 Marmont Ln, Los Angeles, CA 90069</span>
+            </div>
+            <div class="nap-item">
+                <span class="nap-icon">Phone:</span>
+                <span><a href="tel:+14244976337">(424) 497-6337</a></span>
+            </div>
+            <div class="nap-item">
+                <span class="nap-icon">Hours:</span>
+                <span>24/7 Emergency Service Available</span>
+            </div>
+            <div class="nap-item">
+                <span class="nap-icon">Service:</span>
+                <span>AC Repair, Installation, Maintenance & Heating Services</span>
+            </div>
+        </div>
+        
+        <!-- Landmarks -->
+        <h2>Los Angeles Landmarks & Areas We Serve</h2>
+        <p>
+            We serve all of Los Angeles and West Hollywood including areas near the Hollywood Walk of Fame, Sunset Strip, Hollywood Bowl, The Grove, Melrose Trading Post, Cedars-Sinai Medical Center, Beverly Center, and everywhere in between. No matter where you are in LA, we can get to you quickly.
+        </p>
+        
+        <!-- Nearby Areas -->
+        <h2>Nearby Areas We Serve</h2>
+        <p>In addition to Los Angeles and West Hollywood, we also provide HVAC services to these neighboring communities:</p>
+        <div class="nearby-grid">
+            <div class="nearby-item"><a href="/locations/beverly-hills-ca">Beverly Hills, CA</a></div>
+            <div class="nearby-item"><a href="/locations/hollywood-ca">Hollywood, CA</a></div>
+            <div class="nearby-item"><a href="/locations/santa-monica-ca">Santa Monica, CA</a></div>
+            <div class="nearby-item"><a href="/locations/culver-city-ca">Culver City, CA</a></div>
+        </div>
+        
+        <!-- Final CTA -->
+        <div class="cta-section">
+            <h2>Need AC Service in Los Angeles or West Hollywood?</h2>
+            <p>Our technicians are ready to help LA homeowners with all their HVAC needs. Call now for fast, reliable service!</p>
+            <a href="tel:+14244976337" class="btn btn-secondary">Call (424) 497-6337</a>
+            <a href="/contact" class="btn btn-primary" style="margin-left: 0.5rem;">Schedule Online</a>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <h3>Air Conditioning Champ</h3>
+            <p style="opacity: 0.7; margin-bottom: 1.5rem;">Expert HVAC services. 24/7 emergency AC repair.</p>
+            
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-loc">
+                        <a href="/locations/el-mirage-az">El Mirage, AZ</a>
+                        <span>15235 N Dysart Rd, El Mirage, AZ 85335</span>
+                    </div>
+                    <div class="footer-loc">
+                        <a href="/locations/surprise-az">Surprise, AZ</a>
+                        <span>12801 W Bell Rd, Surprise, AZ 85378</span>
+                        <span class="phone">(623) 301-9085</span>
+                    </div>
+                    <div class="footer-loc">
+                        <a href="/locations/peoria-az">Peoria, AZ</a>
+                        <span>8550 N 91st Ave, Peoria, AZ 85345</span>
+                    </div>
+                    <div class="footer-loc">
+                        <a href="/locations/glendale-az">Glendale, AZ</a>
+                        <span>5539 W Glendale Ave, Glendale, AZ 85301</span>
+                    </div>
+                    <div class="footer-loc">
+                        <a href="/locations/goodyear-az">Goodyear, AZ</a>
+                        <span>14555 W Yuma Rd, Goodyear, AZ 85338</span>
+                    </div>
+                    <div class="footer-loc">
+                        <a href="/locations/avondale-az">Avondale, AZ</a>
+                        <span>1717 N Dysart Rd, Avondale, AZ 85392</span>
+                    </div>
+                    <div class="footer-loc">
+                        <a href="/locations/cave-creek-az">Cave Creek, AZ</a>
+                        <span>6070 E Cave Creek Rd, Cave Creek, AZ 85331</span>
+                        <span class="phone">(480) 866-9234</span>
+                    </div>
+                    <div class="footer-loc">
+                        <a href="/locations/san-antonio-tx">San Antonio, TX</a>
+                        <span>3103 SE Loop 410 Acc Rd, San Antonio, TX 78222</span>
+                        <span class="phone">(210) 964-1940</span>
+                    </div>
+                    <div class="footer-loc">
+                        <a href="/locations/north-las-vegas-nv">North Las Vegas, NV</a>
+                        <span>2409 Las Vegas Blvd N, North Las Vegas, NV 89030</span>
+                        <span class="phone">(702) 725-4220</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-loc">
+                        <a href="/locations/santee-ca">Santee, CA</a>
+                        <span>11493 Woodside Ave, Santee, CA 92071</span>
+                        <span class="phone">(619) 649-7174</span>
+                    </div>
+                    <div class="footer-loc">
+                        <a href="/locations/carlsbad-ca">Carlsbad, CA</a>
+                        <span>7147 University Ave, La Mesa, CA 91942</span>
+                        <span class="phone">(619) 649-7175</span>
+                    </div>
+                    <div class="footer-loc">
+                        <a href="/locations/el-cajon-ca">El Cajon, CA</a>
+                        <span>1202 W Main St, El Cajon, CA 92020</span>
+                        <span class="phone">(619) 649-7221</span>
+                    </div>
+                    <div class="footer-loc">
+                        <a href="/locations/poway-ca">Poway, CA</a>
+                        <span>12147 Kirkham Rd, Poway, CA 92064</span>
+                        <span class="phone">(858) 256-1901</span>
+                    </div>
+                    <div class="footer-loc">
+                        <a href="/locations/orange-ca">Orange, CA</a>
+                        <span>383 N Cambridge St, Orange, CA 92866</span>
+                        <span class="phone">(657) 202-8088</span>
+                    </div>
+                    <div class="footer-loc">
+                        <a href="/locations/san-francisco-ca">San Francisco, CA</a>
+                    </div>
+                    <div class="footer-loc">
+                        <a href="/locations/north-hollywood-ca">North Hollywood, CA</a>
+                        <span>11734 Hamlin St, North Hollywood, CA 91606</span>
+                        <span class="phone">(747) 318-0005</span>
+                    </div>
+                    <div class="footer-loc">
+                        <a href="/locations/san-jose-ca">San Jose, CA</a>
+                        <span>700 College Dr, San Jose, CA 95128</span>
+                        <span class="phone">(669) 304-3070</span>
+                    </div>
+                    <div class="footer-loc">
+                        <a href="/locations/san-diego-ca">San Diego, CA</a>
+                        <span>5174 Dubois Dr, San Diego, CA 92117</span>
+                        <span class="phone">(619) 735-9311</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                &copy; 2026 Air Conditioning Champ. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Air Conditioning Champ",
+      "description": "Expert AC repair, installation, and maintenance in Los Angeles and West Hollywood, California.",
+      "url": "https://airconditioningchamp.com/locations/los-angeles-ca",
+      "telephone": "+1-424-497-6337",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "8262 Marmont Ln",
+        "addressLocality": "Los Angeles",
+        "addressRegion": "CA",
+        "postalCode": "90069",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "34.0980276",
+        "longitude": "-118.37000359999999"
+      },
+      "openingHours": ["Mo-Su 00:00-23:59"],
+      "priceRange": "$$",
+      "areaServed": [
+        {"@type": "City", "name": "Los Angeles"},
+        {"@type": "City", "name": "West Hollywood"},
+        {"@type": "City", "name": "Hollywood"},
+        {"@type": "City", "name": "Beverly Hills"}
+      ]
+    }
+    </script>
+</body>
+</html>
