@@ -46,15 +46,13 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
     );
   };
 
-  const handleBackdropClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handleBackdropClose = () => {
     if (canClose) {
       onClose();
     }
   };
 
-  const handleCloseClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handleCloseClick = () => {
     onClose();
   };
 
@@ -65,8 +63,8 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
       {/* Backdrop */}
       <div 
         className="fixed inset-0 bg-black/50 z-40 lg:hidden"
-        onClick={handleBackdropClick}
-        onTouchEnd={handleBackdropClick}
+        onClick={handleBackdropClose}
+        onTouchEnd={handleBackdropClose}
       />
       
       {/* Menu */}
