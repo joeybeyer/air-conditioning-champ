@@ -12,6 +12,12 @@ import { MobileNav } from './MobileNav';
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const handleMenuToggle = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       {/* Top bar */}
@@ -95,8 +101,12 @@ export function Header() {
 
             {/* Mobile menu button */}
             <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden text-gray-700 p-2"
+              type="button"
+              onClick={handleMenuToggle}
+              onTouchEnd={(e) => {
+                e.stopPropagation();
+              }}
+              className="lg:hidden text-gray-700 p-2 relative z-[60]"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

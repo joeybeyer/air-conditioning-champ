@@ -15,6 +15,7 @@ interface MobileNavProps {
 export function MobileNav({ isOpen, onClose }: MobileNavProps) {
   const pathname = usePathname();
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
+  const [canClose, setCanClose] = useState(false);
   const prevPathname = useRef<string | null>(null);
 
   // Close menu on route change (but not on initial mount)
@@ -26,21 +27,35 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
   }, [pathname, onClose]);
 
   // Prevent body scroll when menu is open
+  // Also add a small delay before backdrop can close (prevents touch event issues)
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      setCanClose(false);
+      const timer = setTimeout(() => setCanClose(true), 100);
+      return () => clearTimeout(timer);
     } else {
       document.body.style.overflow = '';
+      setCanClose(false);
     }
-    return () => {
-      document.body.style.overflow = '';
-    };
   }, [isOpen]);
 
   const toggleExpanded = (label: string) => {
     setExpandedItems((prev) =>
       prev.includes(label) ? prev.filter((item) => item !== label) : [...prev, label]
     );
+  };
+
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (canClose) {
+      onClose();
+    }
+  };
+
+  const handleCloseClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onClose();
   };
 
   if (!isOpen) return null;
@@ -50,15 +65,19 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
       {/* Backdrop */}
       <div 
         className="fixed inset-0 bg-black/50 z-40 lg:hidden"
-        onClick={onClose}
+        onClick={handleBackdropClick}
+        onTouchEnd={handleBackdropClick}
       />
       
       {/* Menu */}
-      <div className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 lg:hidden shadow-xl overflow-y-auto">
+      <div 
+        className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 lg:hidden shadow-xl overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Close button */}
         <div className="flex justify-end p-4 border-b">
           <button
-            onClick={onClose}
+            onClick={handleCloseClick}
             className="p-2 text-gray-700 hover:text-primary-600"
             aria-label="Close menu"
           >
@@ -90,7 +109,6 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                           key={child.href}
                           href={child.href}
                           className="block text-gray-700 hover:text-primary-600 py-1"
-                          onClick={onClose}
                         >
                           {child.label}
                         </Link>
@@ -102,7 +120,6 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 <Link
                   href={item.href}
                   className="block font-semibold text-gray-900 py-2 hover:text-primary-600"
-                  onClick={onClose}
                 >
                   {item.label}
                 </Link>
